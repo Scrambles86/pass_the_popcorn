@@ -1,0 +1,22 @@
+{
+    "python.pythonPath": "env\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.env.windows" : {
+        "SECRET_KEY": "my secret key here",
+        "DEV": "1",
+        "FLASK_DEBUG": "1",
+        "MONGO_URI": "my uri here",
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+              "scope": "meta.function-call.generic.python",
+              "settings": {
+                "foreground": "#d6c67c"
+              }
+            }
+          ]
+    },
+}
