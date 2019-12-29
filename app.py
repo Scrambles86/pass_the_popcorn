@@ -5,3 +5,5 @@ from flask_pymongo import PyMongo
 from os import path
 if path.exists("env.py"):
   import env 
+
+app = Flask(__name__)
