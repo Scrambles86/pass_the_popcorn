@@ -6,6 +6,10 @@ from os import path
 if path.exists("env.py"):
   import env 
 
+@app.route("/")
+def home():
+    return "Hello, Flask!"
+
 app = Flask(__name__)
 
 mongo = PyMongo(app)
