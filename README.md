@@ -20,12 +20,12 @@
 <li><a href="https://imgur.com/TouLGr9">Add Review - Desktop</a></li>
 <li><a href="https://imgur.com/3FQsaPN">My Page - Desktop</a></li>
 <li><a href="https://imgur.com/xWLqmGN">Archive - Desktop</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+<li><a href="https://imgur.com/8khKGsy">Front Page - Tablet</a></li>
+<li><a href="https://imgur.com/7KH3QVg">Add Review - Tablet</a></li>
+<li><a href="https://imgur.com/ZwqINCv">My Page - Tablet</a></li>
+<li><a href="https://imgur.com/qC3KDgP">Archive - Tablet</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Mobile</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Add Review - Mobile</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">My Page - Mobile</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Archive - Mobile</a></li>
 </ul>
