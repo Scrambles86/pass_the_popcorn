@@ -13,3 +13,8 @@
 <li>I am a parent looking for reccomendations on a good film to watch with my kids</li>
 <li>I am a Film Studies student, and would like to practice my critical analysis skills</li>
 </ul>
+
+<h3>Wireframes</h3>
+<ul>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+</ul>
