@@ -17,4 +17,15 @@
 <h3>Wireframes</h3>
 <ul>
 <li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+<li><a href="https://imgur.com/TouLGr9">Add Review - Desktop</a></li>
+<li><a href="https://imgur.com/3FQsaPN">My Page - Desktop</a></li>
+<li><a href="https://imgur.com/xWLqmGN">Archive - Desktop</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
+<li><a href="https://imgur.com/JlYk0kQ">Front Page - Desktop</a></li>
 </ul>
