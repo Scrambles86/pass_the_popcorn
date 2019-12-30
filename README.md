@@ -24,8 +24,8 @@
 <li><a href="https://imgur.com/7KH3QVg">Add Review - Tablet</a></li>
 <li><a href="https://imgur.com/ZwqINCv">My Page - Tablet</a></li>
 <li><a href="https://imgur.com/qC3KDgP">Archive - Tablet</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Front Page - Mobile</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Add Review - Mobile</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">My Page - Mobile</a></li>
-<li><a href="https://imgur.com/JlYk0kQ">Archive - Mobile</a></li>
+<li><a href="https://imgur.com/It2nwsf">Front Page - Mobile</a></li>
+<li><a href="https://imgur.com/PFt2HDz">Add Review - Mobile</a></li>
+<li><a href="https://imgur.com/ZwqINCv">My Page - Mobile</a></li>
+<li><a href="https://imgur.com/WhhITB8">Archive - Mobile</a></li>
 </ul>
