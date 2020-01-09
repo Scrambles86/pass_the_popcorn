@@ -7,6 +7,8 @@ APP = Flask(__name__)
 
 print(os.environ.get("MONGO_URI"))
 
+mongo = PyMongo(APP)
+
 @APP.route("/")
 def hello():
     """
