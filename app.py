@@ -10,11 +10,12 @@ print(os.environ.get("MONGO_URI"))
 mongo = PyMongo(APP)
 
 @APP.route("/")
-def hello():
+@APP.route("/get_tasks")
+def get_tasks():
     """
-    This is the test function
+    Redirects to existing base template
     """
-    return "Hello, Flask!"
+    return render_template("index.html", tasks=mongo.db.tasks.find())
 
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),
