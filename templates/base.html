@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
 </head>
 <body>
-    {% for task in movie_data %}
-        {{task.Title}}
-        {{task.Year}}
-        {{task.Director}}
-        {{task.Starring}}
-        {{task.My Rating}}
-        {{task.My Thoughts}}
+    {% for movie in movie_data %}
+        {{movie.Title}}
+        {{movie.Year}}
+        {{movie.Director}}
+        {{movie.Starring}}
+        {{movie.My Rating}}
+        {{movie.My Thoughts}}
     {% endblock %}
 
 
