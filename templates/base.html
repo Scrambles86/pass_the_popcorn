@@ -9,7 +9,7 @@
 </head>
 <body>
     {{% include nav.html %}}
-    {% for movie in movie_data %}
+    {{% for movie in movie_data %}}
         {{movie.Title}}
         {{movie.Year}}
         {{movie.Director}}
