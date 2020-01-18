@@ -15,7 +15,7 @@ def get_tasks():
     """
     Redirects to existing base template
     """
-    return render_template("index.html", tasks=mongo.db.tasks.find())
+    return render_template("base.html", tasks=mongo.db.tasks.find())
 
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),
