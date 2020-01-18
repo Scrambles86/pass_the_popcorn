@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
 </head>
 <body>
+    {{% include nav.html %}}
     {% for movie in movie_data %}
         {{movie.Title}}
         {{movie.Year}}
@@ -15,7 +16,7 @@
         {{movie.Starring}}
         {{movie.My Rating}}
         {{movie.My Thoughts}}
-    {% endblock %}
+    {{% endblock %}}
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
