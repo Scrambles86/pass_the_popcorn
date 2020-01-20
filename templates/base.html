@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
 </head>
 <body>
+    {% block content %}
     {% includes nav.html %}
     {% for film in films %}
         {{film.Title}}
@@ -17,6 +18,7 @@
         {{film.Rating}}
         {{film.Thoughts}}
     {% endfor %}
+    {% endblock %}
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
