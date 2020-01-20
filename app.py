@@ -10,8 +10,8 @@ print(os.environ.get("MONGO_URI"))
 mongo = PyMongo(APP)
 
 @APP.route("/")
-@APP.route("/get_tasks")
-def get_tasks():
+@APP.route("/films")
+def films():
     """
     Redirects to existing base template
     """
