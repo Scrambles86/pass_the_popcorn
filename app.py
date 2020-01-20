@@ -17,7 +17,7 @@ def films():
     """
     Redirects to existing base template
     """
-    return render_template("base.html", films=mongo.db.tasks.find())
+    return render_template("base.html", movie_data=mongo.db.tasks.find())
 
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),

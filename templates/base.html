@@ -9,13 +9,13 @@
 </head>
 <body>
 
-    {% for movie in movie_data %}
-        {{movie.Title}}
-        {{movie.Year}}
-        {{movie.Director}}
-        {{movie.Starring}}
-        {{movie.Rating}}
-        {{movie.Thoughts}}
+    {% for films in movie_data %}
+        {{films.Title}}
+        {{films.Year}}
+        {{films.Director}}
+        {{films.Starring}}
+        {{films.Rating}}
+        {{films.Thoughts}}
     {% endfor %}
 
 
