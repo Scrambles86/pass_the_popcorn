@@ -4,20 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pass The Popcorn</title>
+    <title>{% block title %}Pass The Popcorn{% endblock %}</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
 </head>
 <body>
-    {% include nav.html %}
+    {% include 'layout/nav.html' %}
     {% block content %}
-    {% for film in films %}
-        {{film.Title}}
-        {{film.Year}}
-        {{film.Director}}
-        {{film.Starring}}
-        {{film.Rating}}
-        {{film.Thoughts}}
-    {% endfor %}
+    
     {% endblock %}
 
 
