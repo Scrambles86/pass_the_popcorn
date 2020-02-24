@@ -5,3 +5,7 @@
     height: 80px;
     border-top: solid 1px #eee;
 }
+
+.jumbotron {
+    text-align: center;
+}
