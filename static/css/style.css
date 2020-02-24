@@ -6,3 +6,7 @@
     border-top: solid 1px #eee;
 }
 
+.jumbotron {
+    padding-left: 10px;
+    padding-right : 10px;
+}
