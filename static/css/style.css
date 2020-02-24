@@ -6,8 +6,7 @@
     border-top: solid 1px #eee;
 }
 
-.jumbotron {
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-right : 30px;
+#header {
+    padding-botton: 30px;
+    
 }
