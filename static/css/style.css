@@ -7,5 +7,7 @@
 }
 
 .container {
+    position: relative;
+    background-color: blanchedalmond;
     text-align: center;
 }
