@@ -1,6 +1,14 @@
 {% include 'layout/base.html' %}
 {% block content %}
 
+<div>
+    <div class="jumbotron">
+        <h1>Pass The Popcorn</h1>
+        <h2>A user review site for all your film opinions</h2>
+        <h3>Add a review of your own, or browse other user reviews</h3>
+    </div>
+</div>
+
 {% for film in films %}
         {{film.Title}}
         {{film.Year}}
