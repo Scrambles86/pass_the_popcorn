@@ -29,3 +29,16 @@
 <li><a href="https://imgur.com/ZwqINCv">My Page - Mobile</a></li>
 <li><a href="https://imgur.com/WhhITB8">Archive - Mobile</a></li>
 </ul>
+
+<h2>Features</h2>
+
+<h3>Existing Features</h3>
+
+<p>The landing page of PTP contains a navbar and footer that contains links enabling the user to add film reviews on their own page, visit their own page with a log of their reviews, and visit the archive, which will allow users to browse through film reviews chronologically. The landing page also contains a button to allow users to log in to their account.</p>
+
+<p>On the Add Film page, the user will find a form wherein they can add a picture - I have chosen to leave this up to the user, so that they can add either the films poster, or a still image from a particular scene in a film. This was a deliberate choice, as I felt that users using different images will help the archive to look more readable with less repeating images should the same film be reviewed by multiple users.</p>
+
+<p>The page also asks the user to enter the films title, director, stars, year of release, as well as a slightly larger form box to allow the user to leave their own comments regrading the film.</p>
+
+<p></p>
+
