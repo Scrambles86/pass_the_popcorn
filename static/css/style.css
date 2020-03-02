@@ -13,4 +13,5 @@
 
 .jumbotron {
     min-height: 300px;
+    opacity: 0.2;
 }
