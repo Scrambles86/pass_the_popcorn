@@ -18,6 +18,11 @@ def films():
     """
     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn')
 
+@APP.route("/add_review")
+def add_review():
+    return render_template("pages/add.html")
+
+
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
