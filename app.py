@@ -18,9 +18,31 @@ def films():
     """
     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn')
 
-@APP.route("/add_review")
+@APP.route("/reviews")
 def add_review():
-    return render_template("pages/add.html")
+    return render_template("reviews")
+    @APP.route("pages/reviews.html")
+
+@APP.route("/reviews/<review_id>")
+def add_review(review_id):
+    return render_template("reviews")
+    @APP.route("/add_review")
+
+@APP.route("/reviews/add")
+def add_review(review_id):
+    return render_template("reviews")
+    @APP.route("/add_review")
+
+@APP.route("/reviews/edit/review_id")
+def add_review(review_id):
+    return render_template("reviews")
+    @APP.route("/add_review")
+
+@APP.route("/reviews/delete/review_id")
+def add_review(review_id):
+    return render_template("reviews")
+    @APP.route("/add_review")
+
 
 
 if __name__ == '__main__':
