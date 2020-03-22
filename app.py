@@ -48,6 +48,10 @@ def archives():
     return render_template("archive")
     @APP.route("pages/archive.html")
 
+@APP.route("/mypage")
+def userpage():
+    return render_template("mypage")
+    @APP.route("pages/mypage.html")
 
 
 if __name__ == '__main__':
