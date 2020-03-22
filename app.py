@@ -56,7 +56,7 @@ def userpage():
 @APP.route("/index")
 def homepage():
     return render_template("index")
-    @APP.route("pages/index.html")
+    @APP.route("pages/mypage.html")
 
 
 if __name__ == '__main__':
