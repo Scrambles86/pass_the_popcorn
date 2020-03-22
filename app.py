@@ -53,6 +53,11 @@ def userpage():
     return render_template("mypage")
     @APP.route("pages/mypage.html")
 
+@APP.route("/index")
+def homepage():
+    return render_template("index")
+    @APP.route("pages/index.html")
+
 
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),
