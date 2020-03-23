@@ -20,6 +20,9 @@ def films():
 
 @APP.route("/reviews")
 def add_review():
+    """
+    Renders review page
+    """
     return render_template("pages/review.html")
 
 @APP.route("/reviews/<review_id>")
