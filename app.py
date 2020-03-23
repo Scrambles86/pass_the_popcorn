@@ -36,7 +36,7 @@ def add_review(review_id):
     
 
 @APP.route("/reviews/edit/<review_id>")
-def add_review(review_id):
+def edit_review(review_id):
     return render_template("pages/review.html")
     
 
