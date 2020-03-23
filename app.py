@@ -44,7 +44,7 @@ def add_review(review_id):
 
 @APP.route("/archive")
 def archives():
-    return render_template("page/archive.html")
+    return render_template("pages/archive.html")
     
 
 @APP.route("/mypage")
