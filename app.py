@@ -47,6 +47,9 @@ def delete_review(review_id):
 
 @APP.route("/archive")
 def archives():
+    """
+    Renders template for archive page
+    """
     return render_template("pages/archive.html")
     
 
