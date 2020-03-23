@@ -54,7 +54,7 @@ def userpage():
 
 @APP.route("/index")
 def homepage():
-    return render_template("index")
+    return render_template("pages/index.html")
     
 
 
