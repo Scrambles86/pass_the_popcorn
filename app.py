@@ -21,42 +21,42 @@ def films():
 @APP.route("/reviews")
 def add_review():
     return render_template("reviews")
-    @APP.route("pages/reviews.html")
+    
 
 @APP.route("/reviews/<review_id>")
 def add_review(review_id):
    return render_template("reviews")
-   @APP.route("/add_review")
+   
 
 @APP.route("/reviews/add")
 def add_review(review_id):
     return render_template("reviews")
-    @APP.route("/add_review")
+    
 
 @APP.route("/reviews/edit/<review_id>")
 def add_review(review_id):
     return render_template("reviews")
-    @APP.route("/add_review")
+    
 
 @APP.route("/reviews/delete/<review_id>")
 def add_review(review_id):
     return render_template("reviews")
-    @APP.route("/add_review")
+    
 
 @APP.route("/archive")
 def archives():
     return render_template("archive")
-    @APP.route("pages/archive.html")
+    
 
 @APP.route("/mypage")
 def userpage():
     return render_template("mypage")
-    @APP.route("pages/mypage.html")
+    
 
 @APP.route("/index")
 def homepage():
     return render_template("index")
-    @APP.route("pages/mypage.html")
+    
 
 
 if __name__ == '__main__':
