@@ -25,7 +25,7 @@ def add_review():
 
 @APP.route("/reviews/<review_id>")
 def add_review(review_id):
-   return render_template("reviews")
+    return render_template("reviews")
    
 
 @APP.route("/reviews/add")
