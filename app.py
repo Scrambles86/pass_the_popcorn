@@ -49,7 +49,7 @@ def archives():
 
 @APP.route("/mypage")
 def userpage():
-    return render_template("mypage")
+    return render_template("pages/mypage.html")
     
 
 @APP.route("/index")
