@@ -41,7 +41,7 @@ def edit_review(review_id):
     
 
 @APP.route("/reviews/delete/<review_id>")
-def add_review(review_id):
+def delete_review(review_id):
     return render_template("pages/review.html")
     
 
