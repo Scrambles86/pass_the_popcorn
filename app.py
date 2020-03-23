@@ -55,6 +55,9 @@ def archives():
 
 @APP.route("/mypage")
 def userpage():
+    """
+    Render template for users personal page
+    """
     return render_template("pages/mypage.html")
     
 
