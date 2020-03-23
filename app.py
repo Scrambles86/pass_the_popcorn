@@ -30,7 +30,7 @@ def review_ind(review_id):
     return render_template("pages/review/<review_id>.html")
    
 
-@APP.route("/reviews/add")
+@APP.route("/reviews/", method = ["POST"])
 def add_review(review_id):
     return render_template("pages/review.html")
     
@@ -64,7 +64,7 @@ def userpage():
 @APP.route("/index")
 def homepage():
     """
-    Renders template for index page
+    Renders template for index
     """
     return render_template("pages/index.html")
     
