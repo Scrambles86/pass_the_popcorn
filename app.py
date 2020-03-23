@@ -11,12 +11,14 @@ APP.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 MONGO = PyMongo(APP)
 
+
 @APP.route("/")
 def films():
     """
     Redirects to existing base template
     """
     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn')
+
 
 @APP.route("/reviews")
 def review():
@@ -25,25 +27,26 @@ def review():
     """
     return render_template("pages/review.html")
 
+
 @APP.route("/reviews/<review_id>")
 def review_ind(review_id):
     return render_template("pages/review/<review_id>.html")
-   
 
-@APP.route("/reviews/", method = ["POST"])
+
+@APP.route("/reviews/", methods=["POST"])
 def add_review(review_id):
     return render_template("pages/review.html")
-    
+
 
 @APP.route("/reviews/edit/<review_id>")
 def edit_review(review_id):
     return render_template("pages/review.html")
-    
+
 
 @APP.route("/reviews/delete/<review_id>")
 def delete_review(review_id):
     return render_template("pages/review.html")
-    
+
 
 @APP.route("/archive")
 def archives():
@@ -51,7 +54,7 @@ def archives():
     Renders template for archive page
     """
     return render_template("pages/archive.html")
-    
+
 
 @APP.route("/mypage")
 def userpage():
@@ -59,7 +62,7 @@ def userpage():
     Render template for users personal page
     """
     return render_template("pages/mypage.html")
-    
+
 
 @APP.route("/index")
 def homepage():
@@ -67,7 +70,6 @@ def homepage():
     Renders template for index
     """
     return render_template("pages/index.html")
-    
 
 
 if __name__ == '__main__':
