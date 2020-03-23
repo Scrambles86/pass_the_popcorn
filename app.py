@@ -63,6 +63,9 @@ def userpage():
 
 @APP.route("/index")
 def homepage():
+    """
+    Renders template for index page
+    """
     return render_template("pages/index.html")
     
 
