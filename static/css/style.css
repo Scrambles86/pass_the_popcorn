@@ -1,5 +1,5 @@
 .main {
-    background-image: static/images/cinema.jpeg;
+    background-image: url("static/images/cinema.jpeg");
 }
 
 .page-footer {
