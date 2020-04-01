@@ -1,5 +1,5 @@
-$(document).ready(function(){
-
+$(function() {
+  console.log("ready");
 });
 
 $("#signupbutton").click(function() {
