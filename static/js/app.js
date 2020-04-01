@@ -1,3 +1,4 @@
 function openModal() {
-  console.log("here I am!");
+  var modal = document.getElementById("signup");
+  modal.style.display = "block";
 }
