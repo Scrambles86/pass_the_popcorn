@@ -1,3 +1,7 @@
-$("#signupbutton").click(function() {
-  console.log("yes");
-});
+ $(document).ready(function() {
+  $("#signupbutton").click(function() {
+    //$(".modal").css("display", "block");
+    console.log("yes");
+  });
+ }); 
+  
