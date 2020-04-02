@@ -3,7 +3,7 @@ function openModal() {
   modal.style.display = "block"; 
 }
 
-function openModal() {
+function openAddModal() {
   var modal = document.getElementById("addfilm");
   modal.style.display = "block"; 
 }
