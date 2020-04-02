@@ -37,12 +37,13 @@ body {
     position: fixed;
     z-index: 1;
     padding-top: 100px;
-    left: 0;
-    top: 0;
+    left: 150px;
+    top: 50px;
     width: 60%;
     height: 80%;
     overflow: auto;
     background-color: #fff;
+    text-align: center;
   }
 
   .close {
