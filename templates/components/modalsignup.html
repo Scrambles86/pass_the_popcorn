@@ -3,16 +3,22 @@
     {% include 'components/closebutton.html' %}
         <h1>Sign Up!</h1>
         <p>Fill in the form below to create an account</p>
-
+        
+        <div class="row">
         <label for="email"><b>Please enter your Email address</b></label>
         <input type="text" placeholder="Enter Email" name="email" required>
+        </div>
 
+        <div class="row">
         <label for="psw"><b>Enter a Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
+        </div>
 
+        <div class="row">
         <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
           </label>
+        </div>
 
           <div>
             <button type="submit">Sign Me Up!</button>
