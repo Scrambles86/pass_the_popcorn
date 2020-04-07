@@ -33,7 +33,7 @@ body {
 }
 
 .modal {
-   display: none;
+    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
@@ -42,7 +42,7 @@ body {
     width: 60%;
     height: 80%;
     overflow: auto;
-    background-color: #85929E;
+    background-color: #EB6864;
     text-align: center;
     transform: translate(-50%, -50%);
   }
