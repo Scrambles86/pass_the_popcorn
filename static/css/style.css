@@ -45,6 +45,8 @@ body {
     background-color: #EB6864;
     text-align: center;
     transform: translate(-50%, -50%);
+    opacity: 0.9;
+    border: 3px solid #000000;
   }
 
   .close {
@@ -66,5 +68,5 @@ body {
   }
 
   .modal-container {
-      text-align : center;
+      align : center;
   }
