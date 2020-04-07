@@ -42,10 +42,9 @@ body {
     width: 60%;
     height: 80%;
     overflow: auto;
-    background-color: #EB6864;
+    background-color: #d94843;
     text-align: center;
     transform: translate(-50%, -50%);
-    opacity: 0.9;
     border: 3px solid #000000;
   }
 
