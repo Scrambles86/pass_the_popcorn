@@ -4,8 +4,8 @@ function openModal() {
 }
 
 function openFilmModal() {
-  var modal = document.getElementById("addfilm");
-  modal.style.display = "block"; 
+  var filmform = document.getElementsByClass("filmform");
+  filmform.style.display = "block"; 
 }
 
 function closebutton() {
