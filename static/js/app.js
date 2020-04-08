@@ -9,6 +9,6 @@ function openAddModal() {
 }
 
 function closebutton() {
-  var closebtn = document.getElementsByClassName("modal");
+  var closebtn = document.getElementById("signup");
   closebtn.style.display = "none"; 
 }
