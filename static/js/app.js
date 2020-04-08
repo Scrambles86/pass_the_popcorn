@@ -20,16 +20,16 @@ function openDeleteModal() {
 }
 
 function closeModal() {
-  if(signup.style.display != "none" || signup.style.display == null) {
+  if (signup && signup.style.display != "none") {
     signup.style.display = "none";
   }
-  if(addfilm.style.display != "none" || addfilm.style.display == null) {
+  if (addfilm && addfilm.style.display != "none") {
     addfilm.style.display = "none";
   }
-  if(editfilm.style.display != "none" || editfilm.style.display == null) {
+  if (editfilm && editfilm.style.display != "none") {
     editfilm.style.display = "none";
   }
-  if(deletefilm.style.display != "none" || deletefilm.style.display == null) {
+  if (deletefilm && deletefilm.style.display != "none") {
     deletefilm.style.display = "none";
   }
 }
