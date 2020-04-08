@@ -4,7 +4,7 @@ function openModal() {
 }
 
 function openFilmModal() {
-  var filmform = document.getElementsByClassName("filmform");
+  var filmform = document.getElementById("addfilm");
   filmform.style.display = "block"; 
 }
 
