@@ -9,6 +9,6 @@ function openAddModal() {
 }
 
 function closeModal() {
-  var signup = document.getElementById("signup");
+  var closebtn = document.getElementById("signup");
   closebtn.style.display = "none"; 
 }
