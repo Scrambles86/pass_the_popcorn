@@ -13,14 +13,11 @@ function closebutton() {
   closebtn.style.display = "none"; 
 }*/
 
-function showElement (id) {
-  var element = document.getElementById(id);
-  element.classList.remove("hide");
-  element.classList.add("show");
-}
-
-function hideElement (id) {
-  var element = document.getElementById(id);
-  element.classList.remove("show");
-  element.classList.add("hide");
+function toggleElement(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 }
