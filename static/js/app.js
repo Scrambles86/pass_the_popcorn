@@ -1,23 +1,14 @@
-/*function openModal() {
+function openSignup() {
   var modal = document.getElementById("signup");
   modal.style.display = "block"; 
 }
 
-function openFilmModal() {
+function openAddModal() {
   var filmform = document.getElementById("addfilm");
   filmform.style.display = "block"; 
 }
 
-function closebutton() {
-  var closebtn = document.getElementById("signup");
+function closeModal() {
+  var signup = document.getElementById("signup");
   closebtn.style.display = "none"; 
-}*/
-
-function toggleElement(id) {
-  var x = document.getElementById(id);
-  if (x.style.display == "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
 }
