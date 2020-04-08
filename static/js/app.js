@@ -1,4 +1,4 @@
-function openModal() {
+/*function openModal() {
   var modal = document.getElementById("signup");
   modal.style.display = "block"; 
 }
@@ -11,4 +11,16 @@ function openFilmModal() {
 function closebutton() {
   var closebtn = document.getElementById("signup");
   closebtn.style.display = "none"; 
+}*/
+
+function showElement (id) {
+  var element = document.getElementById(id);
+  element.classList.remove("hide");
+  element.classList.add("show");
+}
+
+function hideElement (id) {
+  var element = document.getElementById(id);
+  element.classList.remove("show");
+  element.classList.add("hide");
 }

@@ -33,7 +33,6 @@ body {
 }
 
 .modal, .filmform {
-    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
@@ -68,4 +67,12 @@ body {
 
   .modal-container {
       align : center;
+  }
+
+  .hide {
+      display: none;
+  }
+
+  .show {
+      display: block;
   }
