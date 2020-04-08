@@ -69,3 +69,7 @@ body {
   .modal-container {
       align : center;
   }
+
+  #addfilm {
+      display: none;
+  }
