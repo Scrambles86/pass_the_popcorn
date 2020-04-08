@@ -9,6 +9,6 @@ function openAddModal() {
 }
 
 function closebutton() {
-  var closebtn = document.getElementsByClassName("close");
+  var closebtn = document.getElementsByClassName("modal");
   closebtn.style.display = "none"; 
 }
