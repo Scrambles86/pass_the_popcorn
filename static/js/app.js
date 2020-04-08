@@ -20,6 +20,7 @@ function openDeleteModal() {
 }
 
 function closeModal() {
+  // if element is present on page and its display value isn't "none"
   if (signup && signup.style.display != "none") {
     signup.style.display = "none";
   }
