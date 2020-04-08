@@ -32,8 +32,15 @@ body {
     
 }
 
-.modal, .filmform {
+.modal {
     display: none;
+}
+
+.filmform {
+    display: none;
+}
+
+.modal, .filmform {
     position: fixed;
     z-index: 1;
     padding-top: 100px;
