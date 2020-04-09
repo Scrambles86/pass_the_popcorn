@@ -32,7 +32,7 @@ body {
     
 }
 
-.modal, .filmform {
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -41,6 +41,22 @@ body {
     top: 50%;
     width: 50%;
     height: 70%;
+    overflow: auto;
+    background-color: #d94843;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    border: 3px solid #000000;
+  }
+
+  .filmform {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 80%;
     overflow: auto;
     background-color: #d94843;
     text-align: center;
@@ -68,4 +84,8 @@ body {
 
   .modal-container {
       align : center;
+  }
+
+  .review-container {
+      text-align: center;
   }
