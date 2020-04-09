@@ -2,21 +2,23 @@
     <div id="addfilm" class="filmform">
         {% include 'components/closebutton.html' %}
         <h2>Add A Review</h2>
+        <div class="container"
         <p class="mb-4">Upload an image from this movie - Posters, characters, favourite scenes - your choice!</p>
         <input type="file" class="myFile" name="filename">
         <input type="submit">
-        <input name="title" placeholder="Enter Film Title" class="title mb-4" required />
-        <input name="director" placeholder="Enter film director" class="director mb-4" required />
-        <input name="year" placeholder="Year Of Release" class="year mb-4" required />
-        <input name="starring" placeholder="Who Stars In This Film?" class="starring mb-4" required />
-        <select class="rating mb-4" name="rating">
+        </div>
+        <input name="title" placeholder="Enter Film Title" class="title row mb-4" required />
+        <input name="director" placeholder="Enter film director" class="director row mb-4" required />
+        <input name="year" placeholder="Year Of Release" class="year row mb-4" required />
+        <input name="starring" placeholder="Who Stars In This Film?" class="starring row mb-4" required />
+        <select class="rating row mb-4" name="rating">
             <option value="1">1 Star</option>
             <option value="2">2 Stars</option>
             <option value="3">3 Stars</option>
             <option value="4">4 Stars</option>
             <option value="5">5 Stars</option>
         </select>
-        <textarea rows="4" cols="50" name="subject" placeholder="What are your thoughts on this film?" class="message mb-4" required></textarea>
+        <textarea rows="4" cols="50" name="subject" placeholder="What are your thoughts on this film?" class="message row mb-4" required></textarea>
         <input name="submit" class="btn" type="submit" value="Send"/>
     </div>
 </form>
