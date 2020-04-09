@@ -85,3 +85,7 @@ body {
   .modal-container {
       align : center;
   }
+
+  .text-container {
+      margin-left: 10px;
+  }
