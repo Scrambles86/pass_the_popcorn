@@ -37,6 +37,7 @@ def review_ind(review_id):
 def add_review():
     films = MONGO.db.films
     films.add_review(request.form.to_dict())
+    posts.insert_one()
     return redirect (url_for("pages/review.html"))
 
 
