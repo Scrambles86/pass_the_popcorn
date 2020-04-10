@@ -35,7 +35,7 @@ def review_ind(review_id):
 
 @APP.route("/add_review", methods=["POST"])
 def add_review():
-    films = mongo.db.films
+    films = MONGO.db.films
     films.add_review(request.form.to_dict())
     return redirect (url_for("pages/review.html"))
 
