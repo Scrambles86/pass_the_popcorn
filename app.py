@@ -33,9 +33,11 @@ def review_ind(review_id):
     return render_template("pages/review/<review_id>.html")
 
 
-@APP.route("/reviews/", methods=["POST"])
-def add_review(review_id):
-    return render_template("pages/review.html")
+@APP.route("/add_review", methods=["POST"])
+def add_review():
+    films = mongo.db.films
+    films.add_review(request.form.to_dict())
+    return redirect (url_for("pages/review.html"))
 
 
 @APP.route("/reviews/edit/<review_id>")
