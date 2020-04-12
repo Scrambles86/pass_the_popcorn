@@ -98,5 +98,6 @@ body {
 
   .film-button {
       height: 100%;
-      border: 2px inset #ffffff;
+      border: 2px solid #ffffff;
+      text-align: center;
   }
