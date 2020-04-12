@@ -90,6 +90,8 @@ body {
       margin-left: 10px;
   }
 
-  .row {
+  .title-row {
       font-family: 'Gotu', sans-serif;
+      background-color: #EB6864;
+      opacity: 0.9;
   }
