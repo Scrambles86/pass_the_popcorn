@@ -3,21 +3,21 @@
 <div class="row title-row justify-content-center mb-4">
     <h1>Manage Your Reviews</h1>
     </div>
-    <div class="row btn-group">
+    <div class="container row">
         <div>
-            <div class= "col-xs-3">
+            <div class= "col-sm">
                 <button class="btn-lg film-button btn-success" onclick="openAddModal()">Add A Review</button>
                 {% include 'components/addfilm.html' %}
             </div>
         </div>
         <div>
-            <div class= "col-xs-3">
+            <div class= "col-sm">
                 <button class="btn-lg film-button btn-warning"  onclick="openEditModal()">Edit A Review</button>
                 {% include 'components/editfilm.html' %}
             </div>
         </div>
         <div>
-            <div class= "col-xs-3">
+            <div class= "col-sm">
                 <button class="btn-lg film-button btn-danger"  onclick="openDeleteModal()">Delete A Review</button>
                 {% include 'components/deletefilm.html' %}
             </div>
