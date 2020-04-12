@@ -94,11 +94,15 @@ body {
       font-family: 'Gotu', sans-serif;
       background-color: #EB6864;
       opacity: 0.9;
-      border: 2px solid #ffffff;
+      border: 2px solid #000000;
   }
 
   .film-button {
       height: 100%;
-      border: 2px solid #ffffff;
+      border: 2px solid #000000;
+      text-align: center;
+  }
+
+  .button-container {
       text-align: center;
   }
