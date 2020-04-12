@@ -1,3 +1,6 @@
+console.log(fetch("http://www.omdbapi.com/?apikey=[ac155d96]&"))
+
+
 var signup = document.getElementById("signup");
 var addfilm = document.getElementById("addfilm");
 var editfilm = document.getElementById("editfilm");
