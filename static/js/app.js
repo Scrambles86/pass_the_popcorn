@@ -1,5 +1,6 @@
 fetch("http://www.omdbapi.com/?apikey=ac155d96&")
-  .then(res => console.log(res))
+  .then(res => res.json())
+  .then (data => console.log(data))
 
 
 var signup = document.getElementById("signup");
