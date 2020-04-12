@@ -89,3 +89,7 @@ body {
   .text-container {
       margin-left: 10px;
   }
+
+  .row {
+      font-family: 'Gotu', sans-serif;
+  }
