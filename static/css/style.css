@@ -95,3 +95,8 @@ body {
       background-color: #EB6864;
       opacity: 0.9;
   }
+
+  .film-button {
+      width: 100%;
+      height: 100%;
+  }
