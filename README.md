@@ -34,11 +34,33 @@
 
 <h3>Existing Features</h3>
 
-<p>The landing page of PTP contains a navbar and footer that contains links enabling the user to add film reviews on their own page, visit their own page with a log of their reviews, and visit the archive, which will allow users to browse through film reviews chronologically. The landing page also contains a button to allow users to log in to their account.</p>
+<p>The landing page of PTP contains a navbar and footer that contains links enabling the user to add film reviews on their own page, visit their own page to allow them to post reviews, and visit the archive, which will allow users to browse through film reviews chronologically. The landing page also contains a button to allow users to log in to their account, which appears in the form of a modal.</p>
 
-<p>On the Add Film page, the user will find a form wherein they can add a picture - I have chosen to leave this up to the user, so that they can add either the films poster, or a still image from a particular scene in a film. This was a deliberate choice, as I felt that users using different images will help the archive to look more readable with less repeating images should the same film be reviewed by multiple users.</p>
+<p>On the Add Film page, the user will find a form wherein they can search for a movie using an API, and fill in their thoughts about the film. The original plan for this site called for the user to add this information themselves, but this felt like bad UI - it was forcing the user to go to other sites to find this information, which would have made the overall user experience very clunky and laboured.</p>
 
-<p>The page also asks the user to enter the films title, director, stars, year of release, as well as a slightly larger form box to allow the user to leave their own comments regrading the film.</p>
+<p>Additionally, the user will find buttons to edit and delete their previous reviews. All f the forms to add, edit and delete are presented in modal form so as to make using the site feel more fluid. The modal fills in the film title, year of release, stars and director of each film, with a text box allowing users to fill out their own thoughts on the film and a select dropdown allowing users to assign a score to their chosen film.</p>
 
-<p></p>
+<h3>Features Left To Implement</h3>
 
+<p>Ideally, I would like to code a version of this site that has full user profile pages, allowing users to read selected information about others. I would also like to implement a commenting system, allowing user to comment on each others reviews to create more of a social media type experience.</p>
+
+<p>To pair with this, I would like to implement more of a 'landing page' for each user, that archives all of their reviews seperately to others.</p>
+
+<h3>Javascript Features</h3>
+
+<p>Pass The Popcorn works in conjunction with Bootstrap to allow for cleaner site usage on smaller screens. The pairing of JQuery with Bootstrap allows for the navbar to shrink to a burger menu on smaller devices.</p>
+
+<p>Core Javascript has been used to create a close button for each modal. In order to break the close button down to be included as a Jinja element, the id of each form has been targeted to display:none if the button is clicked.</p>
+
+<h3>Technologies Used</h3>
+
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>Bootstrap</li>
+<li>JQuery</li>
+<li>Javascript</li>
+<li>Google Fonts</li>
+<li>Python</li>
+
+</ul>

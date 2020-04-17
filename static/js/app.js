@@ -3,10 +3,10 @@ fetch("http://www.omdbapi.com/?apikey=ac155d96&")
   .then (data => console.log(data))
 
 
-var signup = document.getElementById("signup");
-var addfilm = document.getElementById("addfilm");
-var editfilm = document.getElementById("editfilm");
-var deletefilm = document.getElementById("deletefilm");
+let signup = document.getElementById("signup");
+let addfilm = document.getElementById("addfilm");
+let editfilm = document.getElementById("editfilm");
+let deletefilm = document.getElementById("deletefilm");
 
 function openSignup() {
   signup.style.display = "block"; 
