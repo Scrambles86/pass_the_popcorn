@@ -48,7 +48,7 @@ body {
     border: 3px solid #000000;
   }
 
-  .filmform {
+  .filmform, .formstyle {
     display: none;
     position: fixed;
     z-index: 1;
@@ -111,6 +111,6 @@ body {
       margin-left: 90px;
   }
 
-  .content {
+  #contentone, #contenttwo, #contentthree, #contentfour {
       display: none;
   }
