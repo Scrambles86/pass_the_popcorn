@@ -48,7 +48,7 @@ body {
     border: 3px solid #000000;
   }
 
-  .filmform, .formstyle {
+  .filmform, #formstyle {
     display: none;
     position: fixed;
     z-index: 1;
