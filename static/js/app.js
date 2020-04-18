@@ -7,7 +7,7 @@ let signup = document.getElementById("signup");
 let addfilm = document.getElementById("addfilm");
 let editfilm = document.getElementById("editfilm");
 let deletefilm = document.getElementById("deletefilm");
-let modalselect = document.getElementById("modalselect");
+
 
 function openSignup() {
   signup.style.display = "block"; 
@@ -40,9 +40,3 @@ function closeModal() {
     deletefilm.style.display = "none";
   }
 }
-
-function modalselect() {
-
-  if 
-
-})
