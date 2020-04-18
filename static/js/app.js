@@ -35,17 +35,17 @@ function openDeleteModal() {
 
 function closeModal() {
   // if element is present on page and its display value isn't "none"
-  // if (signup && signup.style.display != "none") {
-  //   signup.style.display = "none";
-  // }
-  // if (addfilm && addfilm.style.display != "none") {
-  //   addfilm.style.display = "none";
-  // }
-  // if (editfilm && editfilm.style.display != "none") {
-  //   editfilm.style.display = "none";
-  // }
-  // if (deletefilm && deletefilm.style.display != "none") {
-  //   deletefilm.style.display = "none";
-  // }
+  if (contentone && contentone.style.display != "none") {
+    contentone.style.display = "none";
+  }
+  if (contenttwo && contenttwo.style.display != "none") {
+    contenttwo.style.display = "none";
+  }
+  if (contentthree && contentthree.style.display != "none") {
+    contentthree.style.display = "none";
+  }
+  if (contentfour && contentfour.style.display != "none") {
+    contentfour.style.display = "none";
+  }
   formstyle.style.display = "none";
 }
