@@ -1,8 +1,8 @@
-// fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96", {
-//   method: 'GET'
-// })
-//   .then(res => res.json())
-//   .then(data => console.log(data))
+fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96", {
+  method: 'GET'
+})
+  .then(res => res.json())
+  .then(data => console.log(data))
 
 
 // let signup = document.getElementById("signup");
@@ -51,3 +51,16 @@ function closeModal() {
   }
   formstyle.style.display = "none";
 }
+
+// Attempt at search by title. Currently isn't passing argument into fetch
+// function ombdApiGetByTitle(title) {
+//   return fetch(`https://www.omdbapi.com/?apikey=ac155d96&t=${title}`)
+//     .then((response) => {
+//       return response.json().then((data) => {
+//         console.log(data);
+//         return data;
+//       }).catch((err) => {
+//         console.log(err);
+//       })
+//     });
+// }
