@@ -11,11 +11,6 @@ APP.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 MONGO = PyMongo(APP)
 
-@APP.route("api/movie/add", method=["POST"])
-def add_movie(newMovie):
-    return newMovie
-
-
 @APP.route("/")
 def films():
     """
@@ -71,12 +66,9 @@ def userpage():
     return render_template("pages/mypage.html")
 
 
-@APP.route("/index")
-def homepage():
-    """
-    Renders template for index
-    """
-    return render_template("pages/index.html")
+@APP.route("/api/movie/add", methods=["POST"])
+def add_movie(newMovie):
+    return newMovie
 
 
 if __name__ == '__main__':
