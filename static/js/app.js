@@ -1,8 +1,8 @@
-fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96", {
-  method: 'GET'
-})
-  .then(res => res.json())
-  .then(data => console.log(data))
+// fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96", {
+//   method: 'GET'
+// })
+//   .then(res => res.json())
+//   .then(data => console.log(data))
 
 
 // let signup = document.getElementById("signup");
