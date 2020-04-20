@@ -11,6 +11,10 @@ APP.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 MONGO = PyMongo(APP)
 
+@APP.route("api/movie/add", method=["POST"])
+def add_movie(newMovie)
+    return newMovie
+
 
 @APP.route("/")
 def films():
