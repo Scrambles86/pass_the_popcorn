@@ -1,4 +1,4 @@
-fetch("http://www.omdbapi.com/?apikey=ac155d96&")
+fetch("http://www.omdbapi.com/?i=tt3896198&apikey=ac155d96")
   .then(res => res.json())
   .then (data => console.log(data))
 
