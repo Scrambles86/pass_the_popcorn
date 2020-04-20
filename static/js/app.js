@@ -1,26 +1,8 @@
-// fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96", {
-//   method: 'GET'
-// })
-//   .then(res => res.json())
-//   .then(data => console.log(data))
-
-fetch('https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96')
-  .then(
-    function(response) {
-      if (response.status !== 200) {
-        console.log('Looks like there was a problem. Status Code: ' + response.status);
-        return;
-      }
-
-      // Examine the text in the response
-      response.json().then(function(data) {
-        console.log(data);
-      });
-    }
-  )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
+fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96", {
+  method: 'GET'
+})
+  .then(res => res.json())
+  .then(data => console.log(data))
 
 
 // let signup = document.getElementById("signup");
