@@ -1,7 +1,3 @@
-$(document).ready(function() {
-  $('#movie-table').hide();
-});
-
 /* global $ */
 
 // fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96")
@@ -95,7 +91,7 @@ function ombdApiGetByTitle(title) {
     url: `https://www.omdbapi.com/?apikey=ac155d96&s=${title}`,
     dataType: 'json'
   }).done(function(resp) {
-    $('#movie-table').show();
+    $('.movie-table').css("display", "none");
     clearCard();
     if (resp.Search[0] != null) {
       let movieTitle = resp.Search[0].Title;

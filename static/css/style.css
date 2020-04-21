@@ -114,3 +114,7 @@ body {
   #contentone, #contenttwo, #contentthree, #contentfour {
       display: none;
   }
+
+  .movie-table {
+      display: none;
+  }
