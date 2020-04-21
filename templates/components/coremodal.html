@@ -8,18 +8,18 @@
       <div id="contentone">
         {% include 'components/modalsignup.html'%}
       </div>
-      {% elif %}
-      {% addfilm %}
+      {% endif %}
+      {% if addfilm %}
       <div id="contenttwo">
         {% include 'components/addfilm.html'%}
       </div>
-      {% elif %}
-      {% editfilm %}
+      {% endif %}
+      {% if editfilm %}
       <div id="contentthree">
         {% include 'components/editfilm.html'%}
       </div>
-      {% elif %}
-      {% deletefilm %}
+      {% endif %}
+      {% if deletefilm %}
       <div id="contentfour">
         {% include 'components/deletefilm.html'%}
       </div>

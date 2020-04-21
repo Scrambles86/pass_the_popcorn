@@ -1,3 +1,7 @@
+$(document).ready(function() {
+  $('#movie-table').hide();
+});
+
 /* global $ */
 
 // fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96")
@@ -14,7 +18,7 @@ let contentone = document.getElementById("contentone");
 let contenttwo = document.getElementById("contenttwo");
 let contentthree = document.getElementById("contentthree");
 let contentfour = document.getElementById("contentfour");
-const baseURL = `https://www.omdbapi.com/?apikey=ac155d96&s=${title}`;
+
 
 function openSignup() {
   formstyle.style.display = "block";
@@ -53,17 +57,6 @@ function closeModal() {
   formstyle.style.display = "none";
 }
 
-//Attempt at search by title. Currently isn't passing argument into fetch
-function ombdApiGetByTitle(title) {
-   fetch(baseURL + type)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data.Search)
-      data.Search.forEach(element => {
-        console.log(element.Title)
-      });
-    })
-}
 function ombdApiGetById(type, movieId) {
    fetch(`https://www.omdbapi.com/?apikey=ac155d96&i=${movieId}`)
     .then(response => response.json())
@@ -88,19 +81,34 @@ function ombdApiGetByActor(actor) {
      });
    })
 }
-$.ajax({
-  url: "https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96",
-}).done(function(data) {
-  $('#movies').append(JSON.stringify(data));
-  $('#movietitle').append(JSON.stringify(data.Title));
-  $('#dir').append(JSON.stringify(data.Director));
-  $('#release').append(JSON.stringify(data.Year));
-});
 
-// when search button is clicked
-$("#search-movie").click(function() {
-  // get value of input
-  let searchText = $("#search-text").value();
-  ombdApiGetByTitle(searchtext);
-})
+function clearCard() {
+  $('#movie-title').html('');
+  $('#movie-year').html('');
+  $('#movie-director').html('');
+  $('#movie-starring').html('');
+  $('#movie-genre').html('');
+}
+
+function ombdApiGetByTitle(title) {
+  $.ajax({
+    url: `https://www.omdbapi.com/?apikey=ac155d96&s=${title}`,
+    dataType: 'json'
+  }).done(function(resp) {
+    $('#movie-table').show();
+    clearCard();
+    if (resp.Search[0] != null) {
+      let movieTitle = resp.Search[0].Title;
+      $('#movie-title').append(movieTitle);
+    } else {
+      $('#movie-title').append('No movies found named ' + title);
+    }
+  });
+}
+
+// search button onClick
+$('#search-movie').click(function() {
+  let searchText = $('#search-text').val();
+  ombdApiGetByTitle(searchText);
+});
 

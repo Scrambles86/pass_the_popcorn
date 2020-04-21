@@ -1,12 +1,38 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 <div class="card" style="width: 18rem">
-<div class="card-header">
-</div>
-<input id="search-text"></input>
-<button id="search-movie">Search</button>
-<ul class="list-group list-group-flush">
-    <li class="list-group-item"><p id="movietitle"></p></li>
-</ul>
+    <div class="card-header"></div>
+    <input id="search-text"></input>
+    <button id="search-movie">Search</button>
+    <!-- <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <p id="movietitle"></p>
+        </li>
+    </ul> -->
+
+    <table>
+        <tbody id="movie-table">
+            <tr>
+                <td>Title: </td>
+                <td id="movie-title">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Year: </td>
+                <td id="movie-year">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Director: </td>
+                <td id="movie-director">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Starring: </td>
+                <td id="movie-starring">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Genre: </td>
+                <td id="movie-genre">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 {% endblock %}
