@@ -1,6 +1,8 @@
-fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96")
-  .then(res => res.json())
-  .then(data => console.log(data))
+/* global $ */
+
+// fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96")
+//   .then(res => res.json())
+//   .then(data => console.log(data))
 
 
 // let signup = document.getElementById("signup");
@@ -12,6 +14,7 @@ let contentone = document.getElementById("contentone");
 let contenttwo = document.getElementById("contenttwo");
 let contentthree = document.getElementById("contentthree");
 let contentfour = document.getElementById("contentfour");
+const baseURL = `https://www.omdbapi.com/?apikey=ac155d96&s=${title}`;
 
 function openSignup() {
   formstyle.style.display = "block";
@@ -52,7 +55,7 @@ function closeModal() {
 
 //Attempt at search by title. Currently isn't passing argument into fetch
 function ombdApiGetByTitle(title) {
-   fetch(`https://www.omdbapi.com/?apikey=ac155d96&s=${title}`)
+   fetch(baseURL + type)
     .then(response => response.json())
     .then(data => {
       console.log(data.Search)
@@ -61,7 +64,7 @@ function ombdApiGetByTitle(title) {
       });
     })
 }
-function ombdApiGetById(movieId) {
+function ombdApiGetById(type, movieId) {
    fetch(`https://www.omdbapi.com/?apikey=ac155d96&i=${movieId}`)
     .then(response => response.json())
     .then(data => {
@@ -69,9 +72,35 @@ function ombdApiGetById(movieId) {
     })
 }
 function getPoster(poster) {
-  fetch(`http://img.omdbapi.com/?i=tt3896198&h=600&apikey=411852b3=${poster}`)
+  fetch(`http://img.omdbapi.com/?i=tt3896198&h=600&apikey=411852b3r=${poster}`)
    .then(response => response.json())
    .then(data => {
-     console.log(data)
+     console.log(element.Poster)
    })
 }
+function ombdApiGetByActor(actor) {
+  fetch(`https://www.omdbapi.com/?apikey=ac155d96&r=${actor}`)
+   .then(response => response.json())
+   .then(data => {
+     console.log(data.Search)
+     data.Search.forEach(element => {
+       console.log(element.Actor)
+     });
+   })
+}
+$.ajax({
+  url: "https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96",
+}).done(function(data) {
+  $('#movies').append(JSON.stringify(data));
+  $('#movietitle').append(JSON.stringify(data.Title));
+  $('#dir').append(JSON.stringify(data.Director));
+  $('#release').append(JSON.stringify(data.Year));
+});
+
+// when search button is clicked
+$("#search-movie").click(function() {
+  // get value of input
+  let searchText = $("#search-text").value();
+  ombdApiGetByTitle(searchtext);
+})
+
