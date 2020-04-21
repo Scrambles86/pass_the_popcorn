@@ -16,7 +16,7 @@ def films():
     """
     Redirects to existing base template
     """
-    return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn')
+    return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn', signup=False)
 
 
 @APP.route("/reviews")

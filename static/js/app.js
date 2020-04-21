@@ -1,6 +1,4 @@
-fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96", {
-  method: 'GET'
-})
+fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96")
   .then(res => res.json())
   .then(data => console.log(data))
 
@@ -52,15 +50,28 @@ function closeModal() {
   formstyle.style.display = "none";
 }
 
-// Attempt at search by title. Currently isn't passing argument into fetch
-// function ombdApiGetByTitle(title) {
-//   return fetch(`https://www.omdbapi.com/?apikey=ac155d96&t=${title}`)
-//     .then((response) => {
-//       return response.json().then((data) => {
-//         console.log(data);
-//         return data;
-//       }).catch((err) => {
-//         console.log(err);
-//       })
-//     });
-// }
+//Attempt at search by title. Currently isn't passing argument into fetch
+function ombdApiGetByTitle(title) {
+   fetch(`https://www.omdbapi.com/?apikey=ac155d96&s=${title}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.Search)
+      data.Search.forEach(element => {
+        console.log(element.Title)
+      });
+    })
+}
+function ombdApiGetById(movieId) {
+   fetch(`https://www.omdbapi.com/?apikey=ac155d96&i=${movieId}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+    })
+}
+function getPoster(poster) {
+  fetch(`http://img.omdbapi.com/?i=tt3896198&h=600&apikey=411852b3=${poster}`)
+   .then(response => response.json())
+   .then(data => {
+     console.log(data)
+   })
+}
