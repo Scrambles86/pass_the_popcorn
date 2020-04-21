@@ -78,33 +78,35 @@ function ombdApiGetByActor(actor) {
    })
 }
 
-function clearCard() {
-  $("#movie-title").html("");
-  $("#movie-year").html("");
-  $("#movie-director").html("");
-  $("#movie-starring").html("");
-  $("#movie-genre").html("");
-}
+$(document).ready(function () {
+  function clearCard() {
+    $("#movie-title").html("");
+    $("#movie-year").html("");
+    $("#movie-director").html("");
+    $("#movie-starring").html("");
+    $("#movie-genre").html("");
+  }
 
-function ombdApiGetByTitle(title) {
-  $.ajax({
-    url: `https://www.omdbapi.com/?apikey=ac155d96&s=${title}`,
-    dataType: "json"
-  }).done(function(resp) {
-    $(".movie-table").css("display", "none");
-    clearCard();
-    if (resp.Search[0] != null) {
-      let movieTitle = resp.Search[0].Title;
-      $("#movie-title").append(movieTitle);
-    } else {
-      $("#movie-title").append("No movies found named " + title);
-    }
+  function ombdApiGetByTitle(title) {
+    $.ajax({
+      url: `https://www.omdbapi.com/?apikey=ac155d96&s=${title}`,
+      dataType: "json"
+    }).done(function(resp) {
+      $(".movie-table").css("display", "none");
+      clearCard();
+      if (resp.Search[0] != null) {
+        let movieTitle = resp.Search[0].Title;
+        $("#movie-title").append(movieTitle);
+      } else {
+        $("#movie-title").append("No movies found named " + title);
+      }
+    });
+  }
+
+  // search button onClick
+  $("#search-movie").click(function() {
+    let searchText = $("#search-text").val();
+    ombdApiGetByTitle(searchText);
   });
-}
 
-// search button onClick
-$("#search-movie").click(function() {
-  let searchText = $("#search-text").val();
-  ombdApiGetByTitle(searchText);
 });
-
