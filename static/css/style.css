@@ -115,6 +115,6 @@ body {
       display: none;
   }
 
-  .movie-table {
+  .movie-table, .movie-error {
       display: none;
   }

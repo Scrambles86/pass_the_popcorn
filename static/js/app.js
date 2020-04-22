@@ -88,23 +88,35 @@ $(document).ready(function () {
   }
 
   function ombdApiGetByTitle(title) {
-    var format = title.split(' ').join('+');
+    let format = title.split(' ').join('+');  // replace spaces with plus
     $.ajax({
       url: `https://www.omdbapi.com/?apikey=ac155d96&t=${format}`,
       dataType: "json"
     }).done(function(resp) {
+      console.log(resp);
+      $(".movie-error").css("display", "none");
       $(".movie-table").css("display", "block");
       clearCard();
+
+      // initialising variables
       let movieTitle = resp.Title;
       let movieYear = resp.Year;
       let movieDirector = resp.Director;
       let movieActors = resp.Actors;
       let movieGenre = resp.Genre;
-      $("#movie-title").append(movieTitle);
-      $("#movie-year").append(movieYear);
-      $("#movie-director").append(movieDirector);
-      $("#movie-starring").append(movieActors);
-      $("#movie-genre").append(movieGenre);
+
+      
+      if (resp.Response === 'True') {
+        $("#movie-title").append(movieTitle);
+        $("#movie-year").append(movieYear);
+        $("#movie-director").append(movieDirector);
+        $("#movie-starring").append(movieActors);
+        $("#movie-genre").append(movieGenre);
+      } else {
+        $(".movie-table").css("display", "none");
+        $(".movie-error").css("display", "block");
+        $(".movie-error").html(resp.Error);
+      }
     });
   }
 
