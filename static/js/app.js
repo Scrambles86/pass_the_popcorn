@@ -92,8 +92,9 @@ $(document).ready(function () {
       url: `https://www.omdbapi.com/?apikey=ac155d96&s=${title}`,
       dataType: "json"
     }).done(function(resp) {
-      $(".movie-table").css("display", "none");
+      $(".movie-table").css("display", "block");
       clearCard();
+      console.log(JSON.stringify(resp));
       if (resp.Search[0] != null) {
         let movieTitle = resp.Search[0].Title;
         $("#movie-title").append(movieTitle);
