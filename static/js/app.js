@@ -95,11 +95,11 @@ $(document).ready(function () {
     }).done(function(resp) {
       $(".movie-table").css("display", "block");
       clearCard();
-      let movieTitle = resp.Search[0].Title;
-      let movieYear = resp.Search[0].Year;
-      let movieDirector = resp.Search[0].Director;
-      let movieActors = resp.Search[0].Actors;
-      let movieGenre = resp.Search[0].Genre;
+      let movieTitle = resp.Title;
+      let movieYear = resp.Year;
+      let movieDirector = resp.Director;
+      let movieActors = resp.Actors;
+      let movieGenre = resp.Genre;
       $("#movie-title").append(movieTitle);
       $("#movie-year").append(movieYear);
       $("#movie-director").append(movieDirector);
