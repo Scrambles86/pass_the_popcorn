@@ -89,15 +89,22 @@ $(document).ready(function () {
 
   function ombdApiGetByTitle(title) {
     $.ajax({
-      url: `https://www.omdbapi.com/?apikey=ac155d96&s=${title}`,
+      url: `https://www.omdbapi.com/?apikey=ac155d96&t=${title}`,
       dataType: "json"
     }).done(function(resp) {
       $(".movie-table").css("display", "block");
       clearCard();
-      console.log(JSON.stringify(resp));
       if (resp.Search[0] != null) {
         let movieTitle = resp.Search[0].Title;
+        let movieYear = resp.Search[0].Year;
+        let movieDirector = resp.Search[0].Director;
+        let movieActors = resp.Search[0].Actors;
+        let movieGenre = resp.Search[0].Genre;
         $("#movie-title").append(movieTitle);
+        $("#movie-year").append(movieYear);
+        $("#movie-director").append(movieDirector);
+        $("#movie-starring").append(movieActors);
+        $("#movie-genre").append(movieGenre);
       } else {
         $("#movie-title").append("No movies found named " + title);
       }
