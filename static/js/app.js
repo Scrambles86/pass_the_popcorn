@@ -1,14 +1,5 @@
 /* global $ */
 
-// fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96")
-//   .then(res => res.json())
-//   .then(data => console.log(data))
-
-
-// let signup = document.getElementById("signup");
-// let addfilm = document.getElementById("addfilm");
-// let editfilm = document.getElementById("editfilm");
-// let deletefilm = document.getElementById("deletefilm");
 let formstyle = document.getElementById("formstyle");
 let contentone = document.getElementById("contentone");
 let contenttwo = document.getElementById("contenttwo");
@@ -105,7 +96,7 @@ $(document).ready(function () {
       let movieActors = resp.Actors;
       let movieGenre = resp.Genre;
 
-      
+
       if (resp.Response === 'True') {
         $("#movie-title").append(movieTitle);
         $("#movie-year").append(movieYear);
@@ -119,6 +110,12 @@ $(document).ready(function () {
       }
     });
   }
+
+  $("#search-text").on('keyup', function (e) {
+    if (e.keyCode === 13) {
+      $("#search-movie").click();
+    }
+  });
 
   // search button onClick
   $("#search-movie").click(function() {
