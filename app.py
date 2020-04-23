@@ -18,6 +18,12 @@ def films():
     """
     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn', signup=False)
 
+@APP.route("/")
+@APP.route("/index")
+def index() :
+    user = {'username' : ''}
+    return render_template("pages/index.html", title="home", user=user)
+
 
 @APP.route("/reviews")
 def review():
@@ -38,11 +44,6 @@ def add_review():
     films.add_review(request.form.to_dict())
     posts.insert_one()
     return redirect (url_for("pages/review.html"))
-
-
-@APP.route("/reviews/edit/<review_id>")
-def edit_review(review_id):
-    return render_template("pages/review.html")
 
 
 @APP.route("/reviews/delete/<review_id>")
