@@ -27,7 +27,9 @@ def films():
     """
     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn', signup=False)
 
-
+@APP.route('</username>')
+def user(username):
+    return "Hi " + username
 
 
 @APP.route("/reviews")

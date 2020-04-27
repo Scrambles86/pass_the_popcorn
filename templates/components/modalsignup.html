@@ -1,18 +1,37 @@
-{% extends "base.html" %}
+<form id="contentone" class="modal">
+    {% include 'components/closebutton.html' %}
+    <div class="container">
+    
+        <h1>Sign Up!</h1>
+        <p>Fill in the form below to create an account</p>
+        
+        <div class="container modal-container">
+        <div class="row mb-4">
+        <label for="email"><b>Please enter your Email address : </b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        </div>
 
-{% block content %}
-    <h1>Sign In</h1>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}
-        </p>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>{{ form.submit() }}</p>
-    </form>
-{% endblock %}
+        <div class="row mb-4">
+        <label for="psw"><b>Enter a Password : </b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        </div>
+
+        <div class="row mb-4">
+        <label for="psw"><b>Confirm Password : </b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        </div>
+
+        <div class="row mb-4">
+        <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          </label>
+        </div>
+        </div>
+
+          <div>
+            <button type="submit">Sign Me Up!</button>
+          </div>
+
+    </div>
+  
+</form>
