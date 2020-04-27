@@ -6,6 +6,12 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
 
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember_me = BooleanField('Remember Me')
+    submit = SubmitField('Sign In')
+
 APP = Flask(__name__)
 
 APP.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
@@ -21,11 +27,7 @@ def films():
     """
     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn', signup=False)
 
-@APP.route("/")
-@APP.route("/index")
-def index() :
-    user = {'username' : ''}
-    return render_template("pages/index.html", title="home", user=user)
+
 
 
 @APP.route("/reviews")
