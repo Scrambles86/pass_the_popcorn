@@ -22,39 +22,6 @@ def login():
 def user_collection(email, password, username):
     return render_template('pages/mypage.html', username=username)
 
-# @APP.route('/')
-# def index(session):
-#     if 'username' in session: 
-#         return 'You are logged in as ' + session['username']
-#     return render_template('pages/index.html')
-
-# @APP.route('/login', methods=["POST"])
-# def login(session, bcrypt):
-#     users = MONGO.db.users
-#     login_user = users.find_one({'name' : request.form['username']})
-
-#     if login_user:
-#         if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
-#             session['username'] = request.form['username']
-#             return redirect(url_for('index'))
-#         return 'Invalid username/password combination'
-    
-
-# @APP.route('/register', methods=['POST', 'GET'])
-# def register(session, bcrypt):
-#     if request.method == 'POST':
-#         users = MONGO.db.users
-#         existing_user = users.find_one({'name' : request.form['username']})
-
-#         if existing_user is None:
-#             hashpass = bcrypt.haspw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
-#             users.insert({'name' : request.form['username'], 'password' : hashpass})
-#             session['username'] = request.form['username']
-#             return redirect(url_for('index'))
-
-#         return 'That username already exists'
-#     return render_template('register.html')
-
 @APP.route("/")
 def films():
     """

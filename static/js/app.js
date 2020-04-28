@@ -9,31 +9,11 @@
 // let addfilm = document.getElementById("addfilm");
 // let editfilm = document.getElementById("editfilm");
 // let deletefilm = document.getElementById("deletefilm");
-let formstyle = document.getElementById("formstyle");
-let contentone = document.getElementById("contentone");
-let contenttwo = document.getElementById("contenttwo");
-let contentthree = document.getElementById("contentthree");
-let contentfour = document.getElementById("contentfour");
+let formstyle = document.getElementById("formstyle")
 
 
-function openSignup() {
+function openCoreModal() {
   formstyle.style.display = "block";
-  contentone.style.display = "block";
-}
-
-function openAddModal() {
-  formstyle.style.display = "block"; 
-  contenttwo.style.display = "block";
-}
-
-function openEditModal() {
-  formstyle.style.display = "block"; 
-  contentthree.style.display = "block";
-}
-
-function openDeleteModal() {
-  formstyle.style.display = "block"; 
-  contentfour.style.display = "block";
 }
 
 function closeModal() {
@@ -64,7 +44,7 @@ function getPoster(poster) {
   fetch(`http://img.omdbapi.com/?i=tt3896198&h=600&apikey=411852b3r=${poster}`)
    .then(response => response.json())
    .then(data => {
-     console.log(element.Poster)
+     console.log(data)
    })
 }
 function ombdApiGetByActor(actor) {
