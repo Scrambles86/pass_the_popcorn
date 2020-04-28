@@ -2,15 +2,6 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
-
-class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Remember Me')
-    submit = SubmitField('Sign In')
 
 APP = Flask(__name__)
 
@@ -20,16 +11,47 @@ APP.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 MONGO = PyMongo(APP)
 
+@APP.route('/')
+def index():
+    if 'username' in session: 
+        return 'You are logged in as ' + session['username']
+    
+    return render_template('pages/index.html')
+
+@APP.route('/login' method=["POST"])
+def login():
+    users = mongo.db.users
+    login_user = users.find_one({'name' : request.form['username']})
+
+    if login_user:
+        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+        return 'Invalid username/password combination'
+    
+
+@APP.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'name' : request.form['username']})
+
+        if existing_user is None:
+            hashpass = bcrypt.haspw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+            users.insert({'name' : request.form['username'], 'password' = hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+
+        return 'That username already exists'
+    return render_template('register.html')
+    return ''
+
 @APP.route("/")
 def films():
     """
     Redirects to existing base template
     """
     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn', signup=False)
-
-@APP.route('</username>')
-def user(username):
-    return "Hi " + username
 
 
 @APP.route("/reviews")
@@ -51,6 +73,11 @@ def add_review():
     films.add_review(request.form.to_dict())
     posts.insert_one()
     return redirect (url_for("pages/review.html"))
+
+
+@APP.route("/reviews/edit/<review_id>")
+def edit_review(review_id):
+    return render_template("pages/review.html")
 
 
 @APP.route("/reviews/delete/<review_id>")
