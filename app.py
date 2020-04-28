@@ -12,15 +12,14 @@ APP.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 MONGO = PyMongo(APP)
 
 @APP.route('/')
-def index():
+def index(session):
     if 'username' in session: 
         return 'You are logged in as ' + session['username']
-    
     return render_template('pages/index.html')
 
-@APP.route('/login' method=["POST"])
-def login():
-    users = mongo.db.users
+@APP.route('/login', methods=["POST"])
+def login(session, bcrypt):
+    users = MONGO.db.users
     login_user = users.find_one({'name' : request.form['username']})
 
     if login_user:
@@ -31,20 +30,19 @@ def login():
     
 
 @APP.route('/register', methods=['POST', 'GET'])
-def register():
+def register(session, bcrypt):
     if request.method == 'POST':
-        users = mongo.db.users
+        users = MONGO.db.users
         existing_user = users.find_one({'name' : request.form['username']})
 
         if existing_user is None:
             hashpass = bcrypt.haspw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
-            users.insert({'name' : request.form['username'], 'password' = hashpass})
+            users.insert({'name' : request.form['username'], 'password' : hashpass})
             session['username'] = request.form['username']
             return redirect(url_for('index'))
 
         return 'That username already exists'
     return render_template('register.html')
-    return ''
 
 @APP.route("/")
 def films():
@@ -68,11 +66,11 @@ def review_ind(review_id):
 
 
 @APP.route("/add_review", methods=["POST"])
-def add_review():
+def add_review(posts):
     films = MONGO.db.films
     films.add_review(request.form.to_dict())
     posts.insert_one()
-    return redirect (url_for("pages/review.html"))
+    return redirect(url_for("pages/review.html"))
 
 
 @APP.route("/reviews/edit/<review_id>")
@@ -102,8 +100,8 @@ def userpage():
 
 
 @APP.route("/api/movie/add", methods=["POST"])
-def add_movie(newMovie):
-    return newMovie
+def add_movie(new_movie):
+    return new_movie
 
 
 if __name__ == '__main__':
