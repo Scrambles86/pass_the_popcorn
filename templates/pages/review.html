@@ -6,18 +6,20 @@
     <div class="container button-container row">
         <div>
             <div class= "col-md-3">
-                <button class="btn btn-primary btn-success" onClick="openAddFilmModal()">Add A Review</button>
+                <button id="openAddModal" class="btn-lg film-button btn-success"">Add A Review</button>
                 {% include 'components/addfilm.html' %}
             </div>
         </div>
         <div>
             <div class= "col-md-3">
-                <button class="btn-lg film-button btn-info" onClick="openEditModal()">Edit A Review</button>
+                <button id="openEditModal" class="btn-lg film-button btn-info">Edit A Review</button>
+                {% include 'components/editfilm.html' %}
             </div>
         </div>
         <div>
             <div class= "col-md-3">
-                <button class="btn-lg film-button btn-primary" onClick="openDeleteModal()">Delete Review</button>
+                <button id="openDeleteModal" class="btn-lg film-button btn-primary">Delete Review</button>
+                {% include 'components/deletefilm.html' %}
             </div>
         </div>
     </div>

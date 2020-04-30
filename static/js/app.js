@@ -1,12 +1,5 @@
 /* global $ */
 
-let contentone = document.getElementById("contentone");
-// let contenttwo = document.getElementById("contenttwo");
-// let contentthree = document.getElementById("contentthree");
-
-function openAddFilmModal() {
-  contentone.style.display = "block";
-}
 
 /*
 function closeModal() {
@@ -35,6 +28,31 @@ function getPoster(poster) {
 */
 
 $(document).ready(function () {
+  hideModals();
+
+  $("#openAddModal").click(function() {
+    $("#addfilm").show();
+  });
+
+  $("#openEditModal").click(function() {
+    $("#editfilm").show();
+  });
+
+  $("#openDeleteModal").click(function() {
+    $("#deletefilm").show();
+  });
+
+  $("#closeModal").click(function() {
+    hideModals();
+    console.log("you are clicking close");
+  });
+
+  function hideModals() {
+    $("#addfilm").hide();
+    $("#editfilm").hide();
+    $("#deletefilm").hide();
+  }
+
   function clearCard() {
     $("#movie-title").html("");
     $("#movie-year").html("");

@@ -33,7 +33,7 @@ body {
 }
 
 .modal {
-    display: none;
+    display: block;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
@@ -96,9 +96,5 @@ body {
   }
 
   .movie-table, .movie-error {
-      display: none;
-  }
-
-  #contentone {
       display: none;
   }
