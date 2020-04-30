@@ -32,31 +32,13 @@ function closeModal() {
   }
   formstyle.style.display = "none";
 }
-
-function ombdApiGetById(type, movieId) {
-   fetch(`https://www.omdbapi.com/?apikey=ac155d96&i=${movieId}`)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-    })
-}
-function getPoster(poster) {
+/*function getPoster(poster) {
   fetch(`http://img.omdbapi.com/?i=tt3896198&h=600&apikey=411852b3r=${poster}`)
    .then(response => response.json())
    .then(data => {
      console.log(data)
    })
-}
-function ombdApiGetByActor(actor) {
-  fetch(`https://www.omdbapi.com/?apikey=ac155d96&r=${actor}`)
-   .then(response => response.json())
-   .then(data => {
-     console.log(data.Search)
-     data.Search.forEach(element => {
-       console.log(element.Actor)
-     });
-   })
-}
+}*/
 
 $(document).ready(function () {
   function clearCard() {

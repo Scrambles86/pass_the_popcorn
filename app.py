@@ -46,11 +46,11 @@ def register():
 
 
 @APP.route("/")
-def films():
+def film():
     """
     Redirects to existing base template
     """
-    return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn', signup=False)
+    return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn')
 
 @APP.route('/core_modal')
 def core_modal():
@@ -63,14 +63,12 @@ def review():
     """
     return render_template("pages/review.html")
 
-
-
 @APP.route("/add_review", methods=["POST"])
 def add_review(posts):
     films = MONGO.db.films
     films.add_review(request.form.to_dict())
     posts.insert_one()
-    return redirect(url_for("pages/review.html"))
+    return redirect(url_for("pages/archive.html"))
 
 
 @APP.route("/archive")
