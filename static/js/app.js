@@ -1,21 +1,14 @@
 /* global $ */
 
-// fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ac155d96")
-//   .then(res => res.json())
-//   .then(data => console.log(data))
+let contentone = document.getElementById("contentone");
+// let contenttwo = document.getElementById("contenttwo");
+// let contentthree = document.getElementById("contentthree");
 
-
-// let signup = document.getElementById("signup");
-// let addfilm = document.getElementById("addfilm");
-// let editfilm = document.getElementById("editfilm");
-// let deletefilm = document.getElementById("deletefilm");
-let formstyle = document.getElementById("formstyle");
-
-
-function openCoreModal() {
-  formstyle.style.display = "block";
+function openAddFilmModal() {
+  contentone.style.display = "block";
 }
 
+/*
 function closeModal() {
   // if element is present on page and its display value isn't "none"
   if (contentone && contentone.style.display != "none") {
@@ -27,18 +20,19 @@ function closeModal() {
   if (contentthree && contentthree.style.display != "none") {
     contentthree.style.display = "none";
   }
-  if (contentfour && contentfour.style.display != "none") {
-    contentfour.style.display = "none";
-  }
   formstyle.style.display = "none";
 }
-/*function getPoster(poster) {
+*/
+
+/*
+function getPoster(poster) {
   fetch(`http://img.omdbapi.com/?i=tt3896198&h=600&apikey=411852b3r=${poster}`)
    .then(response => response.json())
    .then(data => {
      console.log(data)
    })
-}*/
+}
+*/
 
 $(document).ready(function () {
   function clearCard() {
