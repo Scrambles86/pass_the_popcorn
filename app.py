@@ -79,13 +79,6 @@ def archives():
     return render_template("pages/archive.html")
 
 
-@APP.route("/mypage")
-def userpage():
-    """
-    Render template for users personal page
-    """
-    return render_template("pages/mypage.html")
-
 
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),
