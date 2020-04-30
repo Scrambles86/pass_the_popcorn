@@ -6,17 +6,17 @@
     <div class="container button-container row">
         <div>
             <div class= "col-md-3">
-                <button class="btn-lg film-button btn-success" id="addfilm" onclick="openCoreModal()">Add A Review</button>
+                <button class="btn btn-primary btn-success" href="{{ url_for('core_modal') }}">Add A Review</button>
             </div>
         </div>
         <div>
             <div class= "col-md-3">
-                <button class="btn-lg film-button btn-info" onclick="openCoreModal()">Edit A Review</button>
+                <button class="btn-lg film-button btn-info" href="{{ url_for('core_modal') }}">Edit A Review</button>
             </div>
         </div>
         <div>
             <div class= "col-md-3">
-                <button class="btn-lg film-button btn-primary" onclick="openCoreModal()">Delete Review</button>
+                <button class="btn-lg film-button btn-primary" href="{{ url_for('core_modal') }}">Delete Review</button>
             </div>
         </div>
     </div>

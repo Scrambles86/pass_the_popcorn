@@ -52,6 +52,9 @@ def films():
     """
     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn', signup=False)
 
+@APP.route('/core_modal')
+def core_modal():
+    return render_template("components/coremodal.html")
 
 @APP.route("/reviews")
 def review():
