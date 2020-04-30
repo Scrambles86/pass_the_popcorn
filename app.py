@@ -1,7 +1,9 @@
 import os  
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 APP = Flask(__name__)
 
@@ -11,16 +13,37 @@ APP.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 MONGO = PyMongo(APP)
 
-@APP.route('/login', methods=['POST'])
-def login():
-    email = request.form['email']
-    password = request.form['password']
-    username = request.form['username']
-    return redirect("/" + email + "/" + password + "/" + username)
+@APP.route('/')
+def index():
+    return render_template('pages/index.html')
 
-@APP.route('/<email>/<username>/<password>')
-def user_collection(email, password, username):
-    return render_template('pages/mypage.html', username=username)
+@APP.route('/login_page')
+def login_page():
+    return render_template('pages/loginpage.html')
+
+@APP.route('/')
+def user_login():
+    if 'username' in session:
+        return 'You are logged in as' + session['username']
+    
+    return render_template('pages/loginpage.html')
+
+@APP.route('/login')
+def login():
+    return ''
+
+@APP.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST' :
+        users = MONGO.db.users
+        existing_user = users.find_one({'name' : request.form['username']})
+
+        if existing_user is None:
+            hashpass = generate_password_hash(request.form['password'])
+
+    return ''
+
+
 
 @APP.route("/")
 def films():

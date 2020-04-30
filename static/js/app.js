@@ -9,7 +9,7 @@
 // let addfilm = document.getElementById("addfilm");
 // let editfilm = document.getElementById("editfilm");
 // let deletefilm = document.getElementById("deletefilm");
-let formstyle = document.getElementById("formstyle")
+let formstyle = document.getElementById("formstyle");
 
 
 function openCoreModal() {
