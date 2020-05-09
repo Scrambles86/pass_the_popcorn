@@ -3,7 +3,9 @@ from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-def generate_password_hash("P1ain-text-user-passw@rd", "sha256")
+
+hash = generate_password_hash('foobar')
+check_password_hash(hash, 'foobar')
 
 
 APP = Flask(__name__)

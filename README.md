@@ -12,7 +12,7 @@
 <ul>
 <li>I am an avid cinema goer, and would like to keep an account of all of the films that I have seen.</li>
 <li>I am a Film Studies teacher, and would like to log a database of all the films that I have seen for my students to peruse.</li>
-<li>I am a parent looking for reccomendations on a good film to watch with my kids</li>
+<li>I am a parent looking for recommendations on a good film to watch with my kids</li>
 <li>I am a Film Studies student, and would like to make a log of films that I haven't yet seen in order to expand my knowledge</li>
 </ul>
 
@@ -45,8 +45,6 @@
 <h3>Features Left To Implement</h3>
 
 <p>Ideally, I would like to code a version of this site that has full user profile pages, allowing users to read selected information about others. I would also like to implement a commenting system, allowing user to comment on each others reviews to create more of a social media type experience.</p>
-
-<p>To pair with this, I would like to implement more of a 'landing page' for each user, that archives all of their reviews seperately to others.</p>
 
 <h3>Javascript Features</h3>
 
