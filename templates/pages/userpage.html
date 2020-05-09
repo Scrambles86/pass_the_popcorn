@@ -1,0 +1,11 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+<div class="container button-container row">
+    <div>
+        <div class= "col-md-3">
+            <button id="openAddModal" class="btn-lg film-button btn-success"">Add A Review</button>
+            {% include 'components/addfilm.html' %}
+        </div>
+    </div>
+    <div>
+{% endblock %}
