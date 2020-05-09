@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+def generate_password_hash("P1ain-text-user-passw@rd", "sha256")
 
 
 APP = Flask(__name__)
@@ -63,11 +64,11 @@ def review():
     """
     return render_template("pages/review.html")
 
-@APP.route("/add_review", methods=["POST"])
+@APP.route("/add_review", methods=["GET, POST"])
 def add_review(posts):
-    films = MONGO.db.films
+    films = MONGO.db.popcorn
     films.add_review(request.form.to_dict())
-    posts.insert_one()
+    films.insert_one(posts)
     return redirect(url_for("pages/archive.html"))
 
 
