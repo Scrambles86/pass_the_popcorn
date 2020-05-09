@@ -16,13 +16,24 @@ APP.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 MONGO = PyMongo(APP)
 
-@APP.route('/')
-def index():
-    return render_template('pages/index.html')
+# @APP.route('/')
+# def index():
+#     return render_template('pages/index.html')
 
 @APP.route('/login_page')
 def login_page():
     return render_template('pages/loginpage.html')
+
+@APP.route('/<password>')
+def index(password):
+
+    hashed_value = generate_password_hash(password)
+
+    stored_password = 'pbkdf2:sha256:150000$NawC8dmS$996a3db0462a554d1e3090d4d216c80642726bb65e3eb9869341caf988e3bc5d'
+
+    result = check_password_hash(stored_password, password)
+
+    return str(result)
 
 @APP.route('/')
 def user_login():
@@ -42,7 +53,7 @@ def register():
         existing_user = users.find_one({'name' : request.form['username']})
 
         if existing_user is None:
-            hashpass = generate_password_hash(request.form['password'])
+            hash = generate_password_hash(request.form['password'])
 
     return ''
 
