@@ -27,7 +27,7 @@ def user_login():
     if 'username' in session:
         return 'You are logged in as' + session['username']
     
-    return render_template('pages/loginpage.html')
+    return render_template('pages/userpage.html')
 
 @APP.route('/login')
 def login():
