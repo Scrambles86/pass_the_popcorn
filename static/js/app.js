@@ -73,6 +73,7 @@ $(document).ready(function () {
       clearCard();
 
       // initialising variables
+      let moviePoster = resp.Poster;
       let movieTitle = resp.Title;
       let movieYear = resp.Year;
       let movieDirector = resp.Director;
@@ -81,6 +82,7 @@ $(document).ready(function () {
 
 
       if (resp.Response === 'True') {
+        $("#movie-poster").append(moviePoster);
         $("#movie-title").append(movieTitle);
         $("#movie-year").append(movieYear);
         $("#movie-director").append(movieDirector);
