@@ -1,5 +1,5 @@
 import os  
-from flask import Flask, render_template, redirect, request, url_for, session
+from flask import Flask, render_template, redirect, request, url_for, session, escape
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -14,43 +14,52 @@ APP.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 #Pymongo instance created
 MONGO = PyMongo(APP)
 
-@APP.route('/index')
+@APP.route("/")
+def home():
+    """
+    Redirects to existing base template
+    """
+    return render_template("pages/index.html")
+
+@APP.route('/')
 def index():
-    return render_template('pages/index.html')
+    users = MONGO.db.users
+    if 'username' in session:
+        username = session['username']
+        return 'Logged in as ' + username + '<br>' + \
+         "<b><a href = '/logout'>click here to log out</a></b>"
+
+@APP.route('/login', methods = ['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        session['username'] = request.form['username']
+        return redirect('pages/index.html')
+    return '''
+	
+   <form action = "" method = "post">
+      <p><input type = text name = username/></p>
+      <p<<input type = submit value = Login/></p>
+   </form>
+	
+   '''
+
+@APP.route('/logout')
+def logout():
+   # remove the username from the session if it is there
+    session.pop('username', None)
+    return redirect('pages/index.html')
 
 
-# @APP.route('/<password>')
-# def login_page(password):
+@APP.route('/<password>')
+def login_page(password):
 
-#     hashed_value = generate_password_hash(password)
+    hashed_value = generate_password_hash(password)
 
-#     stored_password = 'pbkdf2:sha256:150000$NawC8dmS$996a3db0462a554d1e3090d4d216c80642726bb65e3eb9869341caf988e3bc5d'
+    stored_password = 'pbkdf2:sha256:150000$NawC8dmS$996a3db0462a554d1e3090d4d216c80642726bb65e3eb9869341caf988e3bc5d'
 
-#     result = check_password_hash(stored_password, password)
+    result = check_password_hash(stored_password, password)
 
-#     return render_template('pages/loginpage.html')
-
-# @APP.route('/')
-# def user_login():
-#     if 'username' in session:
-#         return 'You are logged in as' + session['username']    
-#     return render_template('pages/userpage.html')
-
-# @APP.route('/login')
-# def login():
-#     return ''
-
-# @APP.route('/register', methods=['POST', 'GET'])
-# def register():
-#     if request.method == 'POST' :
-#         users = MONGO.db.users
-#         existing_user = users.find_one({'name' : request.form['username']})
-
-#         if existing_user is None:
-#             hash = generate_password_hash(request.form['password'])
-
-#     return ''
-
+    return render_template('pages/loginpage.html')
 
 
 @APP.route("/")
