@@ -74,7 +74,6 @@ def archives():
     """
     Returns users to their personal collection page
     """
-    loggedIn = True if 'user' in session else False
     return render_template("pages/userpage.html", films=MONGO.db.movie_data.find())
 
 

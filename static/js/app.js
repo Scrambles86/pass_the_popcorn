@@ -82,7 +82,7 @@ $(document).ready(function () {
 
 
       if (resp.Response === 'True') {
-        $("#movie-poster").append(moviePoster);
+        $("#movie-poster").attr("src",moviePoster);
         $("#movie-title").append(movieTitle);
         $("#movie-year").append(movieYear);
         $("#movie-director").append(movieDirector);
