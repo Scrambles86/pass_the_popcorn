@@ -24,6 +24,17 @@ MOVIE_COLLECTION = MONGO.db.movie_data
 def index():
     return render_template("pages/index.html")
 
+@APP.route('/')
+@APP.route('/personal')
+def personal():
+    return render_template("pages/userpage.html")
+
+@APP.route('/')
+@APP.route('/formpage')
+def formpage():
+    return render_template("pages/loginpage.html")
+
+
 # Login
 @APP.route('/login', methods=['GET'])
 def login():
@@ -68,7 +79,7 @@ def user_auth():
 def register():
     # Check if user is not logged in already
     if 'user' in session:
-        flash('You are already sign in!')
+        flash('You are already logged in')
         return redirect(url_for('index'))
     if request.method == 'POST':
         form = request.form.to_dict()
