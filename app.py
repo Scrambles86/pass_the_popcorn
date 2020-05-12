@@ -10,6 +10,7 @@ APP = Flask(__name__)
 # MongoDB settings - URI and Database name. Settings hidden in env file
 APP.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
 APP.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+APP.config["SECRET_KEY"] = os.environ.get('SECRET_KEY')
 
 #Pymongo instance created
 MONGO = PyMongo(APP)
@@ -24,15 +25,17 @@ MOVIE_COLLECTION = MONGO.db.movie_data
 def index():
     return render_template("pages/index.html")
 
-@APP.route('/')
 @APP.route('/personal')
 def personal():
     return render_template("pages/userpage.html")
 
-@APP.route('/')
 @APP.route('/formpage')
 def formpage():
     return render_template("pages/loginpage.html")
+
+@APP.route('/newsignup')
+def newsignup():
+    return render_template("pages/register.html")
 
 
 # Login
@@ -44,7 +47,7 @@ def login():
         if user_in_db:
             # If so redirect user to his profile
             flash("You are logged in already!")
-            return redirect(url_for('profile', user=user_in_db['username']))
+            return redirect(url_for('personal', user=user_in_db['username']))
     else:
         # Render the page for user to be able to log in
         return render_template("pages/loginpage.html")
@@ -65,14 +68,14 @@ def user_auth():
                 return redirect(url_for('admin'))
             else:
                 flash("You were logged in!")
-                return redirect(url_for('profile', user=user_in_db['username']))
+                return redirect(url_for('personal', user=user_in_db['username']))
             
         else:
             flash("Wrong password or user name!")
-            return redirect(url_for('login'))
+            return redirect(url_for('formpage'))
     else:
         flash("You must be registered!")
-        return redirect(url_for('register'))
+        return redirect(url_for('formpage'))
 
 # Sign up
 @APP.route('/register', methods=['GET', 'POST'])
@@ -80,7 +83,7 @@ def register():
     # Check if user is not logged in already
     if 'user' in session:
         flash('You are already logged in')
-        return redirect(url_for('index'))
+        return redirect(url_for('personal', user=user_in_db['username']))
     if request.method == 'POST':
         form = request.form.to_dict()
         # Check if the password and password1 actualy match 
@@ -89,7 +92,7 @@ def register():
             user = USERS_COLLECTION.find_one({"username" : form['username']})
             if user:
                 flash(f"{form['username']} already exists!")
-                return redirect(url_for('register'))
+                return redirect(url_for('formpage'))
             # If user does not exist register new user
             else:                
                 # Hash password
@@ -107,16 +110,16 @@ def register():
                 if user_in_db:
                     # Log user in (add to session)
                     session['user'] = user_in_db['username']
-                    return redirect(url_for('profile', user=user_in_db['username']))
+                    return redirect(url_for('personal', user=user_in_db['username']))
                 else:
                     flash("There was a problem savaing your profile")
-                    return redirect(url_for('register'))
+                    return redirect(url_for('formpage'))
 
         else:
             flash("Passwords dont match!")
-            return redirect(url_for('register'))
+            return redirect(url_for('formpage'))
         
-    return render_template("register.html")
+    return render_template("pages/loginpage.html")
 
 # Log out
 @APP.route('/logout')
