@@ -197,7 +197,7 @@ def profile(user):
 #     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn')
 
 
-@APP.route("/add_review", methods=["GET, POST"])
+@APP.route("/add_review", methods=["POST"])
 def add_review(posts):
     films = MONGO.db.popcorn
     films.add_review(request.form.to_dict())

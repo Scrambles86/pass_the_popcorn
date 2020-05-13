@@ -2,18 +2,11 @@
     {% include 'components/closebutton.html' %}  
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          </button>
-        </div>
-        <div class="card" style="width: 18rem">
+        <div class="modal-header"></div>
+        <!-- <div class="card" style="width: 18rem">
             <div class="card-header"></div>
             <input id="search-text"></input>
             <button id="search-movie">Search</button>
-            <!-- <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <p id="movietitle"></p>
-                </li>
-            </ul> -->
         
             <table>
                 <tbody class="movie-table">
@@ -49,8 +42,14 @@
             <div class="movie-error"></div>
         </div>
       </div>
-    </div>
-    <div><button class="btn-success" href="{{ url_for('add_review') }}">Add To My Collection</button>
-        <button class="btn-danger">Cancel</button>
-    </div>    
+    </div>-->
+
+    <input id="search-text-new"></input>
+    <button id="search-movie-new">Search</button>
+    <div id="movies" class="row"></div>
+
+    <div>
+        <button class="btn-success" href="{{ url_for('add_review') }}">Add To My Collection</button>
+        <button id="closeButton" class="btn-danger"">Cancel</button>
+    </div>     
 </div>

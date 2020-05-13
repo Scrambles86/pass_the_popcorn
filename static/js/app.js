@@ -28,32 +28,18 @@ function getPoster(poster) {
 */
 
 $(document).ready(function () {
-  hideModals();
+  $("#addfilm").hide();
 
   $("#openAddModal").click(function() {
     $("#addfilm").show();
   });
 
-  $("#openEditModal").click(function() {
-    $("#editfilm").show();
-  });
-
-  $("#openDeleteModal").click(function() {
-    $("#deletefilm").show();
-  });
-
-  $("#closeModal").click(function() {
-    hideModals();
-    console.log("you are clicking close");
-  });
-
-  function hideModals() {
+  $("#closeModal, #closeButton").click(function() {
     $("#addfilm").hide();
-    $("#editfilm").hide();
-    $("#deletefilm").hide();
-  }
+  });
 
   function clearCard() {
+    $("#movie-poster").attr("src","");
     $("#movie-title").html("");
     $("#movie-year").html("");
     $("#movie-director").html("");
@@ -61,7 +47,52 @@ $(document).ready(function () {
     $("#movie-genre").html("");
   }
 
-  function ombdApiGetByTitle(title) {
+  function searchFilmsByTitle(title) {
+    let format = title.split(' ').join('+');  // replace spaces with plus
+    $.ajax({
+      url: `https://www.omdbapi.com/?apikey=ac155d96&s=${format}`,
+      dataType: "json"
+    }).done(function(resp) {
+      if (resp.Search != null) {
+        let respSize = resp.Search.length;
+        for (let i = 0; i < respSize; i++) {
+          if(resp.Search[i].Poster != 'N/A' && resp.Search[i].Type == 'movie') {
+            let myHTML = 
+            `<div class="col-sm-6">
+              <a class="movie-select" href="#" id="${resp.Search[i].imdbID}">
+                <img class="movie-image" src="${resp.Search[i].Poster}">
+              </a>
+            </div>`;
+            $("#movies").append(myHTML);
+          }
+        }
+      } else {
+        let myHTML =
+        `<div class="alert alert-primary" role="alert">
+          ${resp.Error}
+        </div>`;
+        $("#movies").append(myHTML);
+      }
+    });
+  }
+
+  $("#search-movie-new").click(function() {
+    $("#movies").html("");
+    let searchText = $("#search-text-new").val();
+    searchFilmsByTitle(searchText);
+  });
+
+  $("#search-text-new").on('keyup', function (e) {
+    if (e.keyCode === 13) {
+    $("#search-movie-new").click();
+    }
+  });
+
+  $(".movie-select").click(function () { // !!! not working - can't figure out why
+    console.log(this.id);
+  });
+
+  function searchMovieByTitle(title) {
     let format = title.split(' ').join('+');  // replace spaces with plus
     $.ajax({
       url: `https://www.omdbapi.com/?apikey=ac155d96&t=${format}`,
@@ -96,16 +127,10 @@ $(document).ready(function () {
     });
   }
 
-  $("#search-text").on('keyup', function (e) {
-    if (e.keyCode === 13) {
-    $("#search-movie").click();
-    }
-  });
-
   // search button onClick
   $("#search-movie").click(function() {
     let searchText = $("#search-text").val();
-    ombdApiGetByTitle(searchText);
+    searchMovieByTitle(searchText);
   });
 
 });
