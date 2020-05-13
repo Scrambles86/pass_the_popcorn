@@ -60,7 +60,7 @@ def user_auth():
     # Check for user in database
     if user_in_db:
         # If passwords match (hashed / real password)
-        if check_password_hash(user_in_db['password'], form['user_password']):
+        if check_password_hash(user_in_db['password'], form['password']):
             # Log user in (add to session)
             session['user'] = form['username']
             # If the user is admin redirect him to admin area
@@ -112,7 +112,7 @@ def register():
                     session['user'] = user_in_db['username']
                     return redirect(url_for('personal', user=user_in_db['username']))
                 else:
-                    flash("There was a problem savaing your profile")
+                    flash("Sorry, something went wrong")
                     return redirect(url_for('formpage'))
 
         else:
@@ -197,12 +197,12 @@ def profile(user):
 #     return render_template("pages/index.html", films=MONGO.db.movie_data.find(), title='Pass The Popcorn')
 
 
-# @APP.route("/add_review", methods=["GET, POST"])
-# def add_review(posts):
-#     films = MONGO.db.popcorn
-#     films.add_review(request.form.to_dict())
-#     films.insert_one(films)
-#     return redirect(url_for("pages/userpage.html"))
+@APP.route("/add_review", methods=["GET, POST"])
+def add_review(posts):
+    films = MONGO.db.popcorn
+    films.add_review(request.form.to_dict())
+    films.insert_one(films)
+    return redirect('pages/userpage.html', user=user_in_db)
 
 
 # @APP.route("/userpage")
