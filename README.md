@@ -59,12 +59,12 @@
 
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
-<li>CSS</li>
-<li>Bootstrap</li>
-<li>JQuery</li>
-<li>Javascript</li>
-<li>Google Fonts</li>
-<li>Python</li>
-<li>MongoDB</li>
-<li>OMDB API</li>
+<li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
+<li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="https://jquery.com/">JQuery</a></li>
+<li><a href="https://www.javascript.com/">Javascript</a></li>
+<li><a href="https://fonts.google.com/">Google Fonts</a></li>
+<li><a href="https://www.python.org/">Python</a></li>
+<li><a href="https://www.mongodb.com/">MongoDB</a></li>
+<li><a href="https://www.omdbapi.com/">OMDB API</a></li>
 </ul>
