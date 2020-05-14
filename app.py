@@ -25,38 +25,38 @@ MOVIE_COLLECTION = MONGO.db.movie_data
 @APP.route('/')
 @APP.route('/index')
 def index():
-"""
+    """
 
-Renders Index Page
+    Renders Index Page
 
-"""
+    """
     return render_template("pages/index.html")
 
 @APP.route('/personal')
 def personal():
-"""
+    """
 
-Renders User Page
+    Renders User Page
 
-"""
+    """
     return render_template("pages/userpage.html")
 
 @APP.route('/formpage')
 def formpage():
-"""
+    """
 
-Renders login Page
+    Renders login Page
 
-"""
+    """
     return render_template("pages/loginpage.html")
 
 @APP.route('/newsignup')
 def newsignup():
-"""
+    """
 
-Renders register Page
+    Renders register Page
 
-"""
+    """
     return render_template("pages/register.html")
 
 
