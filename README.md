@@ -38,7 +38,7 @@
 
 <p>The landing page of PTP contains a navbar and footer that contains links enabling the user to add film reviews on their own page, visit their own page to allow them to post reviews, and visit the archive, which will allow users to browse through film reviews chronologically. The navbar also contains a button to allow users to log in to their account or register for a new account.</p>
 
-<p>On the Add Film page, the user will find a form wherein they can search for a movie using an API, and fill in their thoughts about the film. The original plan for this site called for the user to add this information themselves, but this felt like bad UI - it was forcing the user to go to other sites to find this information, which would have made the overall user experience very clunky and laboured.</p>
+<p>On the Add Film page, the user will find a form wherein they can search for a movie using OMDB API - this search will return the poster for every film containing the words sued in the search bar, and posts that data to the users database when chosen. The original plan for this site called for the user to add this information themselves, but this felt like bad UI - it was forcing the user to go to other sites to find this information, which would have made the overall user experience very clunky and laboured.</p>
 
 
 <h3>Features Left To Implement</h3>
@@ -51,7 +51,9 @@
 
 <p>Pass The Popcorn works in conjunction with Bootstrap to allow for cleaner site usage on smaller screens. The pairing of JQuery with Bootstrap allows for the navbar to shrink to a burger menu on smaller devices.</p>
 
-<p>Core Javascript has been used to create a close button for the add film modal. In order to break the close button down to be included as a Jinja element, the id of each form has been targeted to display:none if the button is clicked.</p>
+<p>Core Javascript has been used to create open and close buttons for the add film modal. In order to break the close button down to be included as a Jinja element, the id of each form has been targeted to display:none if the button is clicked.</p>
+
+<p>Core JS has also been used in the API function, which allows the user to search for films through a database. The JS has been modified so that the results returned to the user are the movie posters, but still posts relevant data to the database. The reason only posters are returned on the search is that this is a much cleaner browsing experience for the user.</p>
 
 <h3>Technologies Used</h3>
 
@@ -63,5 +65,7 @@
 <li>Javascript</li>
 <li>Google Fonts</li>
 <li>Python</li>
+<li>MongoDB</li>
+<li>OMDB API</li>
 
 </ul>
