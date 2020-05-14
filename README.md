@@ -58,7 +58,7 @@
 <h3>Technologies Used</h3>
 
 <ul>
-<li>HTML</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
 <li>CSS</li>
 <li>Bootstrap</li>
 <li>JQuery</li>
@@ -67,5 +67,4 @@
 <li>Python</li>
 <li>MongoDB</li>
 <li>OMDB API</li>
-
 </ul>
