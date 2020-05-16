@@ -49,7 +49,7 @@
 
 <h3>Javascript Features</h3>
 
-<p>Pass The Popcorn works in conjunction with Bootstrap to allow for cleaner site usage on smaller screens. The pairing of JQuery with Bootstrap allows for the navbar to shrink to a burger menu on smaller devices.</p>
+<p>Pass The Popcorn works in conjunction with Bootstrap to allow for cleaner site usage on smaller screens. The pairing of JQuery with Bootstrap allows for the navbar selections to shrink into a burger menu on smaller devices.</p>
 
 <p>Core Javascript has been used to create open and close buttons for the add film modal. In order to break the close button down to be included as a Jinja element, the id of each form has been targeted to display:none if the button is clicked.</p>
 
@@ -67,6 +67,10 @@
 <li><a href="https://www.python.org/">Python</a></li>
 <li><a href="https://www.mongodb.com/">MongoDB</a></li>
 <li><a href="https://www.omdbapi.com/">OMDB API</a></li>
+<li><a href="https://pypi.org/project/Flask/">Flask</a></li>
+<li><a href="https://dashboard.heroku.com/login">Heroku</a></li>
+
+
 </ul>
 
 <h3>Testing</h3>

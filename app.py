@@ -88,8 +88,7 @@ def user_auth():
     if user_in_db:
         if check_password_hash(user_in_db['password'], form['password']):
             session['user'] = form['username']
-                flash("Login Successful!")
-                return redirect(url_for('personal', user=user_in_db['username']))           
+            return redirect(url_for('personal', user=user_in_db['username']))           
         else:
             flash("Incorrect password or user name")
             return redirect(url_for('formpage'))
@@ -100,7 +99,7 @@ def user_auth():
 # Sign up
 @APP.route('/register', methods=['GET', 'POST'])
 def register():
-   """
+    """
     Ensures user is not already logged in.
     Ensures passwords both match, then checks DB to make sure that username isn't already taken
     New user generated if not
@@ -170,12 +169,10 @@ def add_review(posts):
         films.add_review(request.form.to_dict())
         MOVIE_COLLECTION.insert_one(
                     {
-                        'username': form['username'],
-                        'email': form['email'],
-                        'password': hash_pass
+                        
                     }
                 )
-        return redirect('pages/userpage.html', user=user_in_db)
+        return redirect('pages/userpage.html')
     else:
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))
