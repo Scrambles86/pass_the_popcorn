@@ -1,32 +1,6 @@
 /* global $ */
 
 
-/*
-function closeModal() {
-  // if element is present on page and its display value isn't "none"
-  if (contentone && contentone.style.display != "none") {
-    contentone.style.display = "none";
-  }
-  if (contenttwo && contenttwo.style.display != "none") {
-    contenttwo.style.display = "none";
-  }
-  if (contentthree && contentthree.style.display != "none") {
-    contentthree.style.display = "none";
-  }
-  formstyle.style.display = "none";
-}
-*/
-
-/*
-function getPoster(poster) {
-  fetch(`http://img.omdbapi.com/?i=tt3896198&h=600&apikey=411852b3r=${poster}`)
-   .then(response => response.json())
-   .then(data => {
-     console.log(data)
-   })
-}
-*/
-
 $(document).ready(function () {
   $("#addfilm").hide();
 
@@ -88,8 +62,41 @@ $(document).ready(function () {
     }
   });
 
-  $(".movie-select").click(function () { // !!! not working - can't figure out why
-    console.log(this.id);
+  $(document).on("click", ".movie-select", function(e) {
+    e.preventDefault();
+    $("img.movie-image.movie-selected").removeClass("movie-selected");
+    $(this).find(".movie-image").addClass("movie-selected");
+    let movieId = this.id;
+    
+    $.ajax({
+      url: `https://www.omdbapi.com/?apikey=ac155d96&i=${movieId}`,
+      dataType: "json"
+    }).done(function(resp) {
+      console.log(resp.Director);
+      
+      // initialising variables
+      let moviePoster = resp.Poster;
+      let movieTitle = resp.Title;
+      let movieYear = resp.Year;
+      let movieDirector = resp.Director;
+      let movieActors = resp.Actors;
+      let movieGenre = resp.Genre;
+
+      /*
+
+      if (resp.Response === 'True') {
+        $("#movie-poster").attr("src",moviePoster);
+        $("#movie-title").append(movieTitle);
+        $("#movie-year").append(movieYear);
+        $("#movie-director").append(movieDirector);
+        $("#movie-starring").append(movieActors);
+        $("#movie-genre").append(movieGenre);
+      } else {
+        $(".movie-table").css("display", "none");
+        $(".movie-error").css("display", "block");
+        $(".movie-error").html(resp.Error);
+      }*/
+    });
   });
 
   function searchMovieByTitle(title) {

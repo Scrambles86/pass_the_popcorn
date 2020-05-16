@@ -106,10 +106,7 @@ cursor: pointer;
     cursor: pointer;
 }
 
-.movie-image:hover {
-    border: 2px solid white;
-}
-
-div#movies {
-    display: inline-flex;
+.movie-selected, .movie-image:hover {
+    border: 5px solid #42a4f5;
+    border-radius: 5px;
 }
