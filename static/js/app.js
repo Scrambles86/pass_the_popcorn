@@ -73,15 +73,24 @@ $(document).ready(function () {
       dataType: "json"
     }).done(function(resp) {
       console.log(resp.Director);
-      
-      // initialising variables
-      let moviePoster = resp.Poster;
-      let movieTitle = resp.Title;
-      let movieYear = resp.Year;
-      let movieDirector = resp.Director;
-      let movieActors = resp.Actors;
-      let movieGenre = resp.Genre;
+      if (resp.Response === 'True') {
+        // initialising variables
+        let moviePoster = resp.Poster;
+        let movieTitle = resp.Title;
+        let movieYear = resp.Year;
+        let movieDirector = resp.Director;
+        let movieActors = resp.Actors;
+        let movieGenre = resp.Genre;
 
+        $("#movie-poster").val(moviePoster);
+        $("#movie-title").val(movieTitle);
+        $("#movie-director").val(movieDirector);
+        $("#movie-year").val(movieYear);
+        $("#movie-actor").val(movieActors);
+        $("#movie-genre").val(movieGenre);
+      } else {
+        console.log(resp.Error);
+      }
       /*
 
       if (resp.Response === 'True') {

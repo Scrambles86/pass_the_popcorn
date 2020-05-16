@@ -167,16 +167,11 @@ def add_review(posts):
     if 'user' in session:
         films = MONGO.db.popcorn
         films.add_review(request.form.to_dict())
-        MOVIE_COLLECTION.insert_one(
-                    {
-                        
-                    }
-                )
+        MOVIE_COLLECTION.insert_one()
         return redirect('pages/userpage.html')
     else:
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))
-
 
 
 if __name__ == '__main__':
