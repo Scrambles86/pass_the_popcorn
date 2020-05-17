@@ -1,11 +1,40 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 <div class="container button-container row">
-    <div>
-        <div class= "col-md-3">
-            <button id="openAddModal" class="btn-lg film-button btn-success"">Add To My Collection</button>
-            {% include 'components/addfilm.html' %}
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button id="openAddModal" class="btn-lg film-button btn-success">Add To My Collection</button>
+        {% include 'components/addfilm.html' %}
+      </div>
+</div>
+<div class="container button-container row">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button id="openAddModal" class="btn-lg film-button btn-success">Delete A Film</button>
+      </div>
+</div>
+
+
+<div class="container">
+    {% for movie in movie_data %}
+    <div class="col-sm-4">
+        <div class="card">
+          <div class="image">
+            <img value={{film.movie-poster}}>{{film.movie-poster}}</img>
+          </div>
+          <div class="card-inner">
+            <div class="header">
+              <h2 value={{film.movie-title}}>{{film.movie-title}}</h2>
+          </div>
+          <div>
+            <p value={{film.movie-director}}>{{film.movie-director}}</p>
+            <p value={{film.movie-year}}>{{film.movie-year}}</p>
+            <p value={{film.movie-genre}}>{{film.movie-genre}}</p>
+            <p value={{film.movie-starring}}>{{film.movie-starring}}</p>
+          </div>
+            </div>
         </div>
-    </div>
-<div>
+      </div>
+
+    {% endfor %}
+
+</div>
 {% endblock %}

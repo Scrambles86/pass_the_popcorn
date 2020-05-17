@@ -74,7 +74,7 @@ def login():
             flash("Logged in as {} - Welcome!".format(request.form.get("username")))
             return redirect(url_for('personal', user=user_in_db['username']))
     else:
-        return redirect(url_for('profile'))
+        return redirect(url_for('personal'))
 
 # Check user login details from login form
 @APP.route('/user_auth', methods=['POST'])
@@ -137,7 +137,7 @@ def register():
         else:
             flash("Passwords dont match!")
             return redirect(url_for('formpage'))     
-    return return redirect(url_for('formpage'))
+    return redirect(url_for('formpage'))
 
 # Log out
 @APP.route('/logout')
@@ -158,7 +158,7 @@ def profile(user):
     """
     if 'user' in session:
         user_in_db = USERS_COLLECTION.find_one({"username": user})
-        return redirect(url_for('profile', user=user_in_db))
+        return redirect(url_for('personal', user=user_in_db))
     else:
         flash("You must be logged in!")
         return redirect(url_for('login'))
@@ -167,6 +167,7 @@ def profile(user):
 @APP.route("/add_review", methods=["POST"])
 def add_review():
     if 'user' in session:
+        user_in_db = USERS_COLLECTION.find_one({"username": session['user']})
         MOVIE_COLLECTION.insert_one(
             {
                 'movie-poster': request.form.get('movie-poster'),
@@ -179,7 +180,7 @@ def add_review():
             }
         )
         flash("Movie logged to your collection!")
-        return redirect(url_for('profile'))
+        return redirect(url_for('personal', user=user_in_db))
     else:
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))
