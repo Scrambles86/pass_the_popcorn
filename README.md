@@ -47,13 +47,26 @@
 
 <p>I would also like to eventually implement full user reviews on each film. It was in the original plan, but was left out for the sake of streamlining and making sure the base elements were working. In future, I would like for users to be able to make each film in their collection into a full blog post.</p>
 
-<h3>Javascript Features</h3>
+<h3>Javascript Functions</h3>
 
 <p>Pass The Popcorn works in conjunction with Bootstrap to allow for cleaner site usage on smaller screens. The pairing of JQuery with Bootstrap allows for the navbar selections to shrink into a burger menu on smaller devices.</p>
 
 <p>Core Javascript has been used to create open and close buttons for the add film modal. In order to break the close button down to be included as a Jinja element, the id of each form has been targeted to display:none if the button is clicked.</p>
 
 <p>Core JS has also been used in the API function, which allows the user to search for films through a database. The JS has been modified so that the results returned to the user are the movie posters, but still posts relevant data to the database. The reason only posters are returned on the search is that this is a much cleaner browsing experience for the user.</p>
+
+<h3>Python & Flask Functions</h3>
+
+<p>Render Template, Redirect, Request, url_for, Session, and Flash are all imported from Flask for use in Python
+and Flask functionality. Render template and redirect and used to render the pages on the site, and redirect is used to send the user to certain pages based on certain actions on the page. Url_for is used in a similar way to redirect, but redirects functions to pages that have already been rendered.</p>
+
+<p>Session is used to ensure that users can be logged in and out based on their credentials in the database, and also allows for certain functionalities based on this. Flash has been used to flash messages to the user informing that that objects have been added to their database, or that they have logged in or out.</p>
+
+<p>Python functionality has been used to create a login function, as well as the registering of new users. This function requires fields be filled out in the register form, including a password - which is then checked against itself for authorisation purposes. If the two passwords don't match, the user gets a flash message to say there has been an error. Once the user has registered, their data is stored in the database, but the passwords are hashed by Werkzeug security, so that they remain unknown to anyone aside from the user.</p>
+
+<p>Functionality also exists within Python to allow the users chosen films to be posted to the Mongo database. The function takes the poster, directore, title, year, genre and actor fields from the result provided by the API/JS function and returns the user a card with the poster as the header and all of the information beneath. There is also a delete function should a user decide to remove anything from their database.</p>
+
+<p>Jinja templates are also heavily deployed throughout the project, particularly for the navbar. These templates have also been used in the cards on the users film collection page to ensure that the correct content is laoded into the correct places.</p>
 
 <h3>Technologies Used</h3>
 
@@ -75,4 +88,21 @@
 
 <h3>Testing</h3>
 
-<p></p>
+<p>Pass The Popcorn has been tested on Mozilla Firefox and Google Chrome internet browsers, on both a Macbook Pro and a desktop PC. There are no differences between the two, with the Bootstrap providing compatability between a variety of devices. Pass The Popcorn has also been tested on a Kindle Fire tablet and and iPhone8, with no functionality issues. The code for Pass The Popcorn was written in Virtual Studio Code.</p>
+
+<p>Testing has been done on all the navbar links from each seperate page, and all links are fully functional. All of the app routes redirect to the desired pages upon completion of their desired functions.</p>
+
+<p>All of the Python functions have been tested to ensure that everything correctly posts to the database, and also hashes the passwords when users register. There were a lot of inital problems in having the API/JS function and Python function talk to each other and post film data to the DB. A huge help in solving this was in having the movie data post to a form when chosen, which made it much easier for the Python function to identify the required data.</p>
+
+<h2>Deployment</h2>
+
+<p>Pass The Popcorn was deployed through <a href="https://dashboard.heroku.com/apps/pass-the-popcorn">Heroku</a> from the Github master. There is no difference between the development and deployment version of the site. All of the user and film information is stored on MongoDB and is sent through the Heroku app.</p>
+
+<p>In order to deploy Pass the Popcorn, make sure the following are installed on your IDE :</p>
+<ul>
+<li>git</li>
+<li>PIP</li>
+<li>Python 3</li>
+<li>Flask</li>
+<li>MongoDB Atlas</li>
+</ul>

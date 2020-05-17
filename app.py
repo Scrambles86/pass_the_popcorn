@@ -185,6 +185,12 @@ def add_review():
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))
 
+@APP.route('/delete/<movie_data>')
+def delete(movie_data):
+    user_in_db = USERS_COLLECTION.find_one({"username": session['user']})
+    MOVIE_COLLECTION.remove({'_id':ObjectId(movie_data)})
+    return redirect(url_for('personal', user=user_in_db))
+
 
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),
