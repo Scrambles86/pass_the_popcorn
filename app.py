@@ -74,7 +74,7 @@ def login():
             flash("Logged in as {} - Welcome!".format(request.form.get("username")))
             return redirect(url_for('personal', user=user_in_db['username']))
     else:
-        return redirect(url_for('formpage'))
+        return redirect(url_for('profile'))
 
 # Check user login details from login form
 @APP.route('/user_auth', methods=['POST'])
@@ -137,7 +137,7 @@ def register():
         else:
             flash("Passwords dont match!")
             return redirect(url_for('formpage'))     
-    return redirect(url_for('formpage', user=user_in_db))
+    return return redirect(url_for('formpage'))
 
 # Log out
 @APP.route('/logout')
@@ -179,7 +179,7 @@ def add_review():
             }
         )
         flash("Movie logged to your collection!")
-        redirect(url_for('personal'))
+        return redirect(url_for('profile'))
     else:
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))
