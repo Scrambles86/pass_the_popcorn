@@ -3,6 +3,8 @@ from flask import Flask, render_template, redirect, request, url_for, session, f
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+if os.path.exists("env.py"):
+    import env
 
 # Created instance of Flask
 APP = Flask(__name__)
@@ -69,10 +71,10 @@ def login():
     if 'user' in session:
         user_in_db = USERS_COLLECTION.find_one({"username": session['user']})
         if user_in_db:
+            flash("Logged in as {} - Welcome!".format(request.form.get("username")))
             return redirect(url_for('personal', user=user_in_db['username']))
     else:
-
-        return render_template("pages/loginpage.html")
+        return redirect(url_for('formpage'))
 
 # Check user login details from login form
 @APP.route('/user_auth', methods=['POST'])
@@ -107,8 +109,8 @@ def register():
     Logs user in, adding them to session
     """
     if 'user' in session:
-        flash('You are already logged in')
-        return redirect(url_for('personal', user=user_in_db['username']))
+        flash("You are already logged in")
+        return redirect(url_for('personal'))
     if request.method == 'POST':
         form = request.form.to_dict()
         if form['user_password'] == form['user_password1']:
@@ -135,7 +137,7 @@ def register():
         else:
             flash("Passwords dont match!")
             return redirect(url_for('formpage'))     
-    return render_template("pages/loginpage.html")
+    return redirect(url_for('formpage', user=user_in_db))
 
 # Log out
 @APP.route('/logout')
@@ -144,7 +146,7 @@ def logout():
     Clears session, signing out user
     """
     session.clear()
-    flash('You were logged out!')
+    flash("Logged out successfully")
     return redirect(url_for('index'))
 
 # Profile Page
@@ -156,7 +158,7 @@ def profile(user):
     """
     if 'user' in session:
         user_in_db = USERS_COLLECTION.find_one({"username": user})
-        return render_template('pages/userpage.html', user=user_in_db)
+        return redirect(url_for('profile', user=user_in_db))
     else:
         flash("You must be logged in!")
         return redirect(url_for('login'))
@@ -165,8 +167,6 @@ def profile(user):
 @APP.route("/add_review", methods=["POST"])
 def add_review():
     if 'user' in session:
-        films = MONGO.db.popcorn
-        films.add_review(request.form.to_dict())
         MOVIE_COLLECTION.insert_one(
             {
                 'movie-poster': request.form.get('movie-poster'),
@@ -174,10 +174,12 @@ def add_review():
                 'movie-director': request.form.get('movie-director'),
                 'movie-year': request.form.get('movie-year'),
                 'movie-actor': request.form.get('movie-actor'),
-                'movie-genre': request.form.get('movie-genre'),     
+                'movie-genre': request.form.get('movie-genre'),
+                'reviewed-by': session['user'],   
             }
         )
-        return redirect('pages/userpage.html')
+        flash("Movie logged to your collection!")
+        redirect(url_for('personal'))
     else:
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))

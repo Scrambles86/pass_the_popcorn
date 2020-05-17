@@ -9,15 +9,16 @@
     <div id="movies" class="row"></div>
 
     <div>
-        <form id="movie-post" action="" method="POST">
-            <input id="movie-poster" value="">
-            <input id="movie-title" value="">
-            <input id="movie-director" value="">
-            <input id="movie-year" value="">
-            <input id="movie-actor" value="">
-            <input id="movie-genre" value=""> 
+        <form id="movie-post" action="{{ url_for('add_review')}}" method="POST">
+            <input id="movie-poster" name="movie-poster" value="">
+            <input id="movie-title" name="movie-title" value="">
+            <input id="movie-director" name="movie-director" value="">
+            <input id="movie-year" name="movie-year" value="">
+            <input id="movie-actor" name="movie-actor" value="">
+            <input id="movie-genre" name="movie-genre" value=""> 
+            <button type="submit" class="btn-success"">Add To My Collection</button>
+            <button id="closeButton" class="btn-danger">Cancel</button>
         </form>
-        <button type="submit" class="btn-success" href="{{ url_for('add_review') }}">Add To My Collection</button>
-        <button id="closeButton" class="btn-danger"">Cancel</button>
+        
     </div>     
 </div>

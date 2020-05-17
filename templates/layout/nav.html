@@ -7,16 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/index">Home</a>
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/newsignup">Log In/Register</a>
+          <a class="nav-link" href="{{ url_for('newsignup') }}">Log In/Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/personal">My Collection</a>
+          <a class="nav-link" href="{{ url_for('personal') }}">My Collection</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/logout">Log Out</a>
+          <a class="nav-link" href="{{ url_for('logout') }}"Log Out</a>
         </li>
         
       </ul>
