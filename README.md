@@ -148,5 +148,5 @@ and Flask functionality. Render template and redirect and used to render the pag
 
 <h2>Credits</h2>
 
-<p>The user login and register functions are amended versions of a function written by </p>
+<p>The user login and register functions, as well as the register template, are amended versions of a function written by fellow Code Institute student <a href="https://github.com/MiroslavSvec">Miro_alumni</a>, as recommended to me by the tutorial team.</p>
 
