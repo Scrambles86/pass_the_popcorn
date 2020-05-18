@@ -1,6 +1,6 @@
 <div class="container">
   {% for review in user_reviews %}
-  <div class="col-sm-12">
+  <div class="col-sm-4">
   <div class="card">
   <div class="image">
   <img src="{{review.movie_poster}}">
@@ -14,6 +14,7 @@
   <p>Released : {{review.movie_year}}</p>
   <p>Genre : {{review.movie_genre}}</p>
   <p>Starring : {{review.movie_actor}}</p>
+  <p>My Thoughts : {{review.movie_score}}</p>
   </div>
   </div>
   </div>

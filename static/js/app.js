@@ -19,6 +19,7 @@ $(document).ready(function () {
     $("#movie_director").html("");
     $("#movie_starring").html("");
     $("#movie_genre").html("");
+    $("movie_score").html("");
   }
 
   function searchFilmsByTitle(title) {

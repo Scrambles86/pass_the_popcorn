@@ -182,6 +182,7 @@ def add_review():
                 'movie_year': request.form.get('movie_year'),
                 'movie_actor': request.form.get('movie_actor'),
                 'movie_genre': request.form.get('movie_genre'),
+                'movie_score': request.form.get('movie_score'),
                 'reviewed_by': session['user'],  
             }
         )
