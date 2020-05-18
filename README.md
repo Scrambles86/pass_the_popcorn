@@ -113,9 +113,40 @@ and Flask functionality. Render template and redirect and used to render the pag
 <li>$ pip install --upgrade pip</li>
 <li>$ pip install -r requirements.txt</li>
 <li>$ python -m flask run</li>
-<ul>
+</ul>
 
 <h2>Heroku Deployment</h2>
 
-<p>In order to deply to heroku, you will first need a Heroku account. Once you have one, use the command heroku login in the terminal</p>
+<p>In order to deply to heroku, you will first need a Heroku account. Once you have one, use the command heroku login in the terminal. Clone the repository and change the directory in your terminal :</p>
+
+<ul>
+<li>$ heroku git:clone -a pass_the_popcorn</li> 
+<li>$ cd pass_the_popcorn</li>
+</ul>
+
+<p>from here you will need to create a requirements.txt file and Procfile in order to ensure that the app runs on Heroku using all the technologies used in Pass The Popcorn. You can do this by running the following commands in your terminal :</p>
+
+<ul>
+<li>$ pip freeze --local > requirements.txt</li>
+<li>$ echo web: python app.py > Procfile</li>
+</ul>
+
+<p>From here, perform and add and a commit and push to heroku master. Once you arrive at the app, you will need to amend the config vars. You can do this in the settings tab. You'll need to change the IP and PORT.</p>
+
+<ul>
+<li>IP - 0.0.0.0</li>
+<li>PORT - 5000</li>
+</ul>
+
+<h2>Acknowledgments</h2>
+
+<p>A huge thank you as always to my mentor, Simen Daehlin, who was instrumental in pushing me through this project, and continues to be a huge source of knowledge</p>
+
+<p>Huge thanks as well to everyone on the Code Institute tutorial team, all of whom I have recieved help from throughout this project. In particular, thanks to Ian, who was a tremendous help in showing me how to correctly wire up the code to the DB.</p>
+
+<p>An additional thanks to Dave Lovejoy, who continues to hold my hand through Javascript and JQuery when I start to get confuse d- which happens often.</p>
+
+<h2>Credits</h2>
+
+<p>The user login and register functions are amended versions of a function written by </p>
 

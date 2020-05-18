@@ -1,5 +1,7 @@
 {% extends 'layout/base.html' %}
 {% block content %}
+
+<!-- Buttons for adding and deleting -->
 <div class="container button-container row">
     <div class="btn-group" role="group" aria-label="Basic example">
         <button id="openAddModal" class="btn-lg film-button btn-success">Add To My Collection</button>
@@ -12,8 +14,8 @@
       </div>
 </div>
 
-
-<div class="container action="{{ url_for('add_review')}}" method="GET"">
+<!-- Card made to print the film information recieved from DB -->
+<div class="container" action={{url_for('add_review')}}>
     {% for movie in movie_data %}
     <div class="col-sm-4">
         <div class="card">

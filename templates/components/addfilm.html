@@ -4,9 +4,13 @@
       <div class="modal-content">
         <div class="modal-header"></div>
 
+    <!-- ID's passed in from JS to enable search function-->
+
     <input id="search-text-new"></input>
     <button id="search-movie-new">Search</button>
     <div id="movies" class="row"></div>
+
+    <!-- Form for printing the results of the search function and button to post to DB -->
 
     <div>
         <form id="movie-post" action="{{ url_for('add_review')}}" method="POST">
