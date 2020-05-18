@@ -1,12 +1,21 @@
-<div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{film.Title}} - {{film.Year}}</h5>
-      <p class="card-text">{{film.Thoughts}}</p>
+<div class="container" action={{url_for('add_review')}}>
+  {% for movie in movie_data %}
+  <div class="col-sm-4">
+      <div class="card">
+        <div class="image">
+          <img value={{film.movie-poster}}>{{film.movie-poster}}</img>
+        </div>
+        <div class="card-inner">
+          <div class="header">
+            <h2 value={{film.movie-title}}>{{film.movie-title}}</h2>
+        </div>
+        <div>
+          <p value={{film.movie-director}}>{{film.movie-director}}</p>
+          <p value={{film.movie-year}}>{{film.movie-year}}</p>
+          <p value={{film.movie-genre}}>{{film.movie-genre}}</p>
+          <p value={{film.movie-starring}}>{{film.movie-starring}}</p>
+        </div>
+          </div>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{film.Director}}</li>
-      <li class="list-group-item">{{film.Starring}}</li>
-      <li class="list-group-item">{{film.Rating}}</li>
-    </ul>
-  </div>
+    {% endfor %}
