@@ -62,7 +62,8 @@ def newsignup():
     return render_template("pages/register.html")
 
 
-# Login
+# Login function
+
 @APP.route('/login', methods=['GET'])
 def login():
     """
@@ -98,7 +99,7 @@ def user_auth():
         flash("No user found. Please register")
         return redirect(url_for('formpage'))
 
-# Sign up
+# Register function for new users
 @APP.route('/register', methods=['GET', 'POST'])
 def register():
     """
@@ -149,7 +150,7 @@ def logout():
     flash("Logged out successfully")
     return redirect(url_for('index'))
 
-# Profile Page
+# User's Profile Page
 @APP.route('/userpage/<user>')
 def profile(user): 
     """
@@ -163,8 +164,8 @@ def profile(user):
         flash("You must be logged in!")
         return redirect(url_for('login'))
 
-
-@APP.route("/add_review", methods=["POST"])
+# Add film to database
+@APP.route("/add_review", methods=["GET, POST"])
 def add_review():
     if 'user' in session:
         user_in_db = USERS_COLLECTION.find_one({"username": session['user']})
@@ -176,11 +177,13 @@ def add_review():
                 'movie-year': request.form.get('movie-year'),
                 'movie-actor': request.form.get('movie-actor'),
                 'movie-genre': request.form.get('movie-genre'),
-                'reviewed-by': session['user'],   
+                'reviewed-by': session['user'],  
             }
         )
         flash("Movie logged to your collection!")
-        return redirect(url_for('personal', user=user_in_db))
+        for MOVIE_COLLECTION.find({"reviewed-by": session['user']})
+        print (MOVIE_COLLECTION)
+        return redirect(url_for('personal', user=user_in_db, user_collection=user_collection))
     else:
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))
