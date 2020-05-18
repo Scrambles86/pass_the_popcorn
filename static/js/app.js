@@ -13,12 +13,12 @@ $(document).ready(function () {
   });
 
   function clearCard() {
-    $("#movie-poster").attr("src","");
-    $("#movie-title").html("");
-    $("#movie-year").html("");
-    $("#movie-director").html("");
-    $("#movie-starring").html("");
-    $("#movie-genre").html("");
+    $("#movie_poster").attr("src","");
+    $("#movie_title").html("");
+    $("#movie_year").html("");
+    $("#movie_director").html("");
+    $("#movie_starring").html("");
+    $("#movie_genre").html("");
   }
 
   function searchFilmsByTitle(title) {
@@ -82,12 +82,12 @@ $(document).ready(function () {
         let movieActors = resp.Actors;
         let movieGenre = resp.Genre;
 
-        $("#movie-poster").val(moviePoster);
-        $("#movie-title").val(movieTitle);
-        $("#movie-director").val(movieDirector);
-        $("#movie-year").val(movieYear);
-        $("#movie-actor").val(movieActors);
-        $("#movie-genre").val(movieGenre);
+        $("#movie_poster").val(moviePoster);
+        $("#movie_title").val(movieTitle);
+        $("#movie_director").val(movieDirector);
+        $("#movie_year").val(movieYear);
+        $("#movie_actor").val(movieActors);
+        $("#movie_genre").val(movieGenre);
       } else {
         console.log(resp.Error);
       }
@@ -129,12 +129,12 @@ $(document).ready(function () {
 
 
       if (resp.Response === 'True') {
-        $("#movie-poster").attr("src",moviePoster);
-        $("#movie-title").append(movieTitle);
-        $("#movie-year").append(movieYear);
-        $("#movie-director").append(movieDirector);
-        $("#movie-starring").append(movieActors);
-        $("#movie-genre").append(movieGenre);
+        $("#movie_poster").attr("src",moviePoster);
+        $("#movie_title").append(movieTitle);
+        $("#movie_year").append(movieYear);
+        $("#movie_director").append(movieDirector);
+        $("#movie_starring").append(movieActors);
+        $("#movie_genre").append(movieGenre);
       } else {
         $(".movie-table").css("display", "none");
         $(".movie-error").css("display", "block");

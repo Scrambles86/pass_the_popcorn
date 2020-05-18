@@ -171,17 +171,17 @@ def add_review():
         user_in_db = USERS_COLLECTION.find_one({"username": session['user']})
         MOVIE_COLLECTION.insert_one(
             {
-                'movie-poster': request.form.get('movie-poster'),
-                'movie-title': request.form.get('movie-title'),
-                'movie-director': request.form.get('movie-director'),
-                'movie-year': request.form.get('movie-year'),
-                'movie-actor': request.form.get('movie-actor'),
-                'movie-genre': request.form.get('movie-genre'),
-                'reviewed-by': session['user'],  
+                'movie_poster': request.form.get('movie_poster'),
+                'movie_title': request.form.get('movie_title'),
+                'movie_director': request.form.get('movie_director'),
+                'movie_year': request.form.get('movie_year'),
+                'movie_actor': request.form.get('movie_actor'),
+                'movie_genre': request.form.get('movie_genre'),
+                'reviewed_by': session['user'],  
             }
         )
         flash("Movie logged to your collection!")
-        user_reviews = MOVIE_COLLECTION.find({"reviewed-by": session["user"]})
+        user_reviews = MOVIE_COLLECTION.find({"reviewed_by": session["user"]})
         for review in user_reviews:
             print(review)
         return redirect(url_for('personal', user=user_in_db, user_reviews=user_reviews))

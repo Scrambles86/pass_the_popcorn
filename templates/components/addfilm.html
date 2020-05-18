@@ -13,13 +13,13 @@
     <!-- Form for printing the results of the search function and button to post to DB -->
 
     <div>
-        <form id="movie-post" "{{ url_for('add_review')}}" method="POST">
-            <input id="movie-poster" name="movie-poster" value="">
-            <input id="movie-title" name="movie-title" value="">
-            <input id="movie-director" name="movie-director" value="">
-            <input id="movie-year" name="movie-year" value="">
-            <input id="movie-actor" name="movie-actor" value="">
-            <input id="movie-genre" name="movie-genre" value=""> 
+        <form id="movie_post" "{{ url_for('add_review')}}" method="POST">
+            <input id="movie_poster" name="movie_poster" value="">
+            <input id="movie_title" name="movie_title" value="">
+            <input id="movie_director" name="movie_director" value="">
+            <input id="movie_year" name="movie_year" value="">
+            <input id="movie_actor" name="movie_actor" value="">
+            <input id="movie_genre" name="movie_genre" value=""> 
             <button type="submit" class="btn-success"">Add To My Collection</button>
             <button id="closeButton" class="btn-danger">Cancel</button>
         </form>
