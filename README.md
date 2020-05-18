@@ -146,7 +146,11 @@ and Flask functionality. Render template and redirect and used to render the pag
 
 <p>An additional thanks to Dave Lovejoy, who continues to hold my hand through Javascript and JQuery when I start to get confused - which happens often.</p>
 
+<p><strong>All content in this app is intended for educational purposes only.</strong></p>
+
 <h2>Credits</h2>
 
 <p>The user login and register functions, as well as the register template, are amended versions of a function written by fellow Code Institute student <a href="https://github.com/MiroslavSvec">Miro_alumni</a>, as recommended to me by the tutorial team.</p>
+
+
 

@@ -165,7 +165,7 @@ def profile(user):
         return redirect(url_for('login'))
 
 # Add film to database
-@APP.route("/add_review", methods=["GET, POST"])
+@APP.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if 'user' in session:
         user_in_db = USERS_COLLECTION.find_one({"username": session['user']})
