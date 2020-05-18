@@ -181,9 +181,10 @@ def add_review():
             }
         )
         flash("Movie logged to your collection!")
-        for MOVIE_COLLECTION.find({"reviewed-by": session['user']})
-        print (MOVIE_COLLECTION)
-        return redirect(url_for('personal', user=user_in_db, user_collection=user_collection))
+        user_reviews = MOVIE_COLLECTION.find({"reviewed-by": session["user"]})
+        for review in user_reviews:
+            print(review)
+        return redirect(url_for('personal', user=user_in_db, user_reviews=user_reviews))
     else:
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))

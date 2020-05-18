@@ -13,7 +13,7 @@
 </div>
 
 
-<div class="container">
+<div class="container action="{{ url_for('add_review')}}" method="GET"">
     {% for movie in movie_data %}
     <div class="col-sm-4">
         <div class="card">
