@@ -185,11 +185,13 @@ def add_review():
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))
 
-@APP.route('/delete/<movie_data>')
-def delete(movie_data):
-    user_in_db = USERS_COLLECTION.find_one({"username": session['user']})
-    MOVIE_COLLECTION.remove({'_id':ObjectId(movie_data)})
-    return redirect(url_for('personal', user=user_in_db))
+# Delete Film from Database
+@app.route('/delete_movie/<movie_id>', methods = ['GET', 'POST'])
+def delete_movie(movie_id):
+    if request.method == "POST":
+            film = MONGO.db.movie_data
+            film.delete_one({'_id': ObjectId(movie_id)})
+    return redirect(url_for('personal'))
 
 
 if __name__ == '__main__':
