@@ -186,7 +186,7 @@ def add_review():
         return redirect(url_for('login'))
 
 # Delete Film from Database
-@app.route('/delete_movie/<movie_id>', methods = ['GET', 'POST'])
+@APP.route('/delete_movie/<movie_id>', methods = ['GET', 'POST'])
 def delete_movie(movie_id):
     if request.method == "POST":
             film = MONGO.db.movie_data
