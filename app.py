@@ -41,7 +41,12 @@ def personal():
     Renders User Page
 
     """
-    return render_template("pages/userpage.html")
+    if 'user' in session:
+        user_reviews = MOVIE_COLLECTION.find({"reviewed_by": session["user"]})
+        return render_template("pages/userpage.html", user_reviews=user_reviews)
+    else:
+        flash("No user found. Please register")
+        return redirect(url_for('formpage'))
 
 @APP.route('/formpage')
 def formpage():
@@ -181,10 +186,7 @@ def add_review():
             }
         )
         flash("Movie logged to your collection!")
-        user_reviews = MOVIE_COLLECTION.find({"reviewed_by": session["user"]})
-        for review in user_reviews:
-            print(review)
-        return redirect(url_for('personal', user=user_in_db, user_reviews=user_reviews))
+        return redirect(url_for('personal', user=user_in_db))
     else:
         flash("Please log in to add to your collection")
         return redirect(url_for('login'))
@@ -194,7 +196,7 @@ def add_review():
 def delete_movie(movie_id):
     if request.method == "POST":
         film = MONGO.db.movie_data
-        film.delete_one({'_id': ObjectId(movie_id)})
+        film.remove({'_id': ObjectId(movie_id)})
     return redirect(url_for('personal'))
 
 

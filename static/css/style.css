@@ -73,7 +73,7 @@ cursor: pointer;
     text-align: center;
     justify-content: center;
     padding-left: 100px;
-    margin-top: 200px;
+    margin-top: 70px;
     margin-left: 90px;
 }
 
@@ -98,10 +98,6 @@ cursor: pointer;
 }*/
 
 /* Card Styling */
-
-.card:hover {
-    box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
   .card > .card-inner {
     padding:10px;
   }
@@ -115,3 +111,4 @@ cursor: pointer;
   .card img{
     width:100%;
   }
+  

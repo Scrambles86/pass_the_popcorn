@@ -142,7 +142,7 @@ and Flask functionality. Render template and redirect and used to render the pag
 
 <p>A huge thank you as always to my mentor, Simen Daehlin, who was instrumental in pushing me through this project, and continues to be a huge source of knowledge</p>
 
-<p>Huge thanks as well to everyone on the Code Institute tutorial team, all of whom I have recieved help from throughout this project. In particular, thanks to Ian, who was a tremendous help in showing me how to correctly wire up the code to the DB.</p>
+<p>Huge thanks as well to everyone on the Code Institute tutorial team, all of whom I have recieved help from throughout this project. In particular, thanks to <a href="https://github.com/TravelTimN">Tim Nelson</a>, who was a tremendous help in showing me how to correctly wire up the code to the DB.</p>
 
 <p>An additional thanks to Dave Lovejoy, who continues to hold my hand through Javascript and JQuery when I start to get confused - which happens often.</p>
 

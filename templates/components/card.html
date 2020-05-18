@@ -1,21 +1,22 @@
-<div class="container" action={{url_for('add_review')}}>
-  {% for movie in movie_data %}
-  <div class="col-sm-4">
-      <div class="card">
-        <div class="image">
-          <img value={{film.movie_poster}}>{{film.movie_poster}}</img>
-        </div>
-        <div class="card-inner">
-          <div class="header">
-            <h2 value={{film.movie_title}}>{{film.movie_title}}</h2>
-        </div>
-        <div>
-          <p value={{film.movie_director}}>{{film.movie_director}}</p>
-          <p value={{film.movie_year}}>{{film.movie_year}}</p>
-          <p value={{film.movie_genre}}>{{film.movie_genre}}</p>
-          <p value={{film.movie_starring}}>{{film.movie_starring}}</p>
-        </div>
-          </div>
-      </div>
-    </div>
-    {% endfor %}
+<div class="container">
+  {% for review in user_reviews %}
+  <div class="col-sm-12">
+  <div class="card">
+  <div class="image">
+  <img src="{{review.movie_poster}}">
+  </div>
+  <div class="card-inner">
+  <div class="header">
+  <h2>{{review.movie_title}}</h2>
+  </div>
+  <div>
+  <p>Directed By : {{review.movie_director}}</p>
+  <p>Released : {{review.movie_year}}</p>
+  <p>Genre : {{review.movie_genre}}</p>
+  <p>Starring : {{review.movie_actor}}</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  {% endfor %}
+  </div>
