@@ -1,24 +1,27 @@
 <div class="container container-film">
   {% for review in user_reviews %}
   <div class="col-sm-4">
-  <div class="card">
-  <div class="image">
-  <img src="{{review.movie_poster}}">
-  </div>
-  <div class="card-inner">
-  <div class="header">
-  <h2 class="card-row">{{review.movie_title}}</h2>
-  </div>
-  <div>
-  <p>Directed By : {{review.movie_director}}</p>
-  <p>Released : {{review.movie_year}}</p>
-  <p>Genre : {{review.movie_genre}}</p>
-  <p>Starring : {{review.movie_actor}}</p>
-  <h3 class="card-row">My Thoughts</h3>
-  <p>{{review.movie_score}}</p>
-  </div>
-  </div>
-  </div>
+    <span class="material-icons">
+      delete_forever
+      </span>
+    <div class="card">
+      <div class="image">
+        <img src="{{review.movie_poster}}">
+      </div>
+      <div class="card-inner">
+        <div class="header">
+          <h2 class="card-row">{{review.movie_title}}</h2>
+        </div>
+        <div>
+          <p>Directed By : {{review.movie_director}}</p>
+          <p>Released : {{review.movie_year}}</p>
+          <p>Genre : {{review.movie_genre}}</p>
+          <p>Starring : {{review.movie_actor}}</p>
+          <h3 class="card-row">My Thoughts</h3>
+          <p>{{review.movie_score}}</p>
+        </div>
+      </div>
+    </div>
   </div>
   {% endfor %}
-  </div>
+</div>
