@@ -77,7 +77,7 @@ def login():
     if 'user' in session:
         user_in_db = USERS_COLLECTION.find_one({"username": session['user']})
         if user_in_db:
-            flash("Logged in as {} - Welcome!".format(request.form.get("username")))
+            flash("Logged in as {} - Welcome to the party, pal!".format(request.form.get("username")))
             return redirect(url_for('personal', user=user_in_db['username']))
     else:
         return redirect(url_for('personal'))
@@ -195,9 +195,10 @@ def add_review():
 # Delete Film from Database
 @APP.route('/delete_movie/<movie_id>', methods=['GET', 'POST'])
 def delete_movie(movie_id):
-    if request.method == "POST":
-        film = MONGO.db.movie_data
-        film.remove({'_id': ObjectId(movie_id)})
+    film = MONGO.db.movie_data
+    print(film)
+    film.remove({'_id': ObjectId(movie_id)})
+    print(movie_id)
     return redirect(url_for('personal'))
 
 

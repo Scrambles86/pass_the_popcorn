@@ -1,3 +1,3 @@
-<button type="button" class="close" aria-label="Close" action="{{ url_for('delete_movie', movie_id=review._id)}}">
-    <span aria-hidden="true">&times;</span>
-  </button>
+<a class="btn" href="{{ url_for('delete_movie', movie_id=review._id)}}">
+    <i class="fas fa-exclamation-circle"></i>
+</a>

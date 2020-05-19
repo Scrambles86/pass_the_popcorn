@@ -74,9 +74,6 @@ cursor: pointer;
 .button-container {
     text-align: center;
     justify-content: center;
-    padding-left: 100px;
-    margin-top: 70px;
-    margin-left: 90px;
 }
 
 .movie-table, .movie-error {
