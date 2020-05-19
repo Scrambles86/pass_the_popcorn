@@ -22,6 +22,7 @@ $(document).ready(function () {
     $("movie_score").html("");
   }
 
+  // Adds functionality to search bar, returning movie images related to the user's search
   function searchFilmsByTitle(title) {
     let format = title.split(' ').join('+');  // replace spaces with plus
     $.ajax({
@@ -57,12 +58,14 @@ $(document).ready(function () {
     searchFilmsByTitle(searchText);
   });
 
+  // Allows user to use search function with the return key
   $("#search-text-new").on('keyup', function (e) {
     if (e.keyCode === 13) {
     $("#search-movie-new").click();
     }
   });
 
+  // Highlights selected movie poster to user
   $(document).on("click", ".movie-select", function(e) {
     e.preventDefault();
     $("img.movie-image.movie-selected").removeClass("movie-selected");
