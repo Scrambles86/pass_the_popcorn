@@ -152,5 +152,7 @@ and Flask functionality. Render template and redirect and used to render the pag
 
 <p>The user login and register functions, as well as the register template, are amended versions of a function written by fellow Code Institute student <a href="https://github.com/MiroslavSvec">Miro_alumni</a>, as recommended to me by the tutorial team.</p>
 
+<p>The background image used in this project is a free image from <a href="https://www.pexels.com/">Pexels</a></p>
+
 
 

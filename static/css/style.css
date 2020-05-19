@@ -14,10 +14,12 @@ body {
 
 /* Jumbotron styling */
 .jumbotron {
+    font-family: 'Gotu', sans-serif;
+}
+
+.index-jumbotron {
     min-height: 300px;
     opacity: 0.9;
-    font-family: 'Gotu', sans-serif;
-    
 }
 
 /* Styling for close button and modal */
@@ -111,4 +113,13 @@ cursor: pointer;
   .card img{
     width:100%;
   }
-  
+  .card-row {
+      background-color: #b5b4b1;
+      padding: 8px;
+  }
+  .container-film {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
