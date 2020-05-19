@@ -92,20 +92,6 @@ $(document).ready(function () {
       } else {
         console.log(resp.Error);
       }
-      /*
-
-      if (resp.Response === 'True') {
-        $("#movie-poster").attr("src",moviePoster);
-        $("#movie-title").append(movieTitle);
-        $("#movie-year").append(movieYear);
-        $("#movie-director").append(movieDirector);
-        $("#movie-starring").append(movieActors);
-        $("#movie-genre").append(movieGenre);
-      } else {
-        $(".movie-table").css("display", "none");
-        $(".movie-error").css("display", "block");
-        $(".movie-error").html(resp.Error);
-      }*/
     });
   });
 

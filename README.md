@@ -40,6 +40,8 @@
 
 <p>On the Add Film page, the user will find a form wherein they can search for a movie using OMDB API - this search will return the poster for every film containing the words sued in the search bar, and posts that data to the users database when chosen. The original plan for this site called for the user to add this information themselves, but this felt like bad UI - it was forcing the user to go to other sites to find this information, which would have made the overall user experience very clunky and laboured.</p>
 
+<p>Clicking 'Add To Collection' opens a modal containing a search bar. When a user searches in this bar, it returns the film posters associated with their search. The user can then click on the poster that they want to add to their database. Once this has been done, the user can fill in the textbox at the bottom of the form with their thoughts on the film and click the add button. Tjis will then return the user to their page, and present them with a card containing all of the information for that film, including the poster.</p>
+
 
 <h3>Features Left To Implement</h3>
 
@@ -64,7 +66,7 @@ and Flask functionality. Render template and redirect and used to render the pag
 
 <p>Python functionality has been used to create a login function, as well as the registering of new users. This function requires fields be filled out in the register form, including a password - which is then checked against itself for authorisation purposes. If the two passwords don't match, the user gets a flash message to say there has been an error. Once the user has registered, their data is stored in the database, but the passwords are hashed by Werkzeug security, so that they remain unknown to anyone aside from the user.</p>
 
-<p>Functionality also exists within Python to allow the users chosen films to be posted to the Mongo database. The function takes the poster, directore, title, year, genre and actor fields from the result provided by the API/JS function and returns the user a card with the poster as the header and all of the information beneath. There is also a delete function should a user decide to remove anything from their database.</p>
+<p>Functionality also exists within Python to allow the users chosen films to be posted to the Mongo database. The function takes the poster, directore, title, year, genre and actor fields from the result provided by the API/JS function and returns the user a card with the poster as the header and all of the information beneath. There is also a delete function should a user decide to remove anything from their database - this function has been attached to the bottom of each film card.</p>
 
 <p>Jinja templates are also heavily deployed throughout the project, particularly for the navbar. These templates have also been used in the cards on the users film collection page to ensure that the correct content is laoded into the correct places.</p>
 
