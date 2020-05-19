@@ -37,15 +37,17 @@ def index():
 @APP.route('/personal')
 def personal():
     """
-
+    Checks User is in session
+    Find's movies added by user based on reviewed-by object
     Renders User Page
+    Returns user to login page if not logged in
 
     """
     if 'user' in session:
         user_reviews = MOVIE_COLLECTION.find({"reviewed_by": session["user"]})
         return render_template("pages/userpage.html", user_reviews=user_reviews)
     else:
-        flash("No user found. Please register")
+        flash("You shall not pass! Please register or log in")
         return redirect(url_for('formpage'))
 
 @APP.route('/formpage')
@@ -172,6 +174,10 @@ def profile(user):
 # Add film to database
 @APP.route("/add_review", methods=["GET", "POST"])
 def add_review():
+    """
+    Checks User is in session
+    Inserts User's chosen film data to DB
+    """
     if 'user' in session:
         user_in_db = USERS_COLLECTION.find_one({"username": session['user']})
         MOVIE_COLLECTION.insert_one(
@@ -186,7 +192,7 @@ def add_review():
                 'reviewed_by': session['user'],  
             }
         )
-        flash("Movie logged to your collection!")
+        flash("Party On! Movie logged to your collection!")
         return redirect(url_for('personal', user=user_in_db))
     else:
         flash("Please log in to add to your collection")
@@ -195,10 +201,12 @@ def add_review():
 # Delete Film from Database
 @APP.route('/delete_movie/<movie_id>', methods=['GET', 'POST'])
 def delete_movie(movie_id):
+    """
+    Checks database for movie id
+    Removes id from database
+    """
     film = MONGO.db.movie_data
-    print(film)
     film.remove({'_id': ObjectId(movie_id)})
-    print(movie_id)
     return redirect(url_for('personal'))
 
 
