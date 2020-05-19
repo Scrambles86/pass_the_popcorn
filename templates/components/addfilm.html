@@ -14,12 +14,12 @@
 
     <div>
         <form id="movie_post" action="{{ url_for('add_review')}}" method="POST">
-            <input id="movie_poster" name="movie_poster" value="">
-            <input id="movie_title" name="movie_title" value="">
-            <input id="movie_director" name="movie_director" value="">
-            <input id="movie_year" name="movie_year" value="">
-            <input id="movie_actor" name="movie_actor" value="">
-            <input id="movie_genre" name="movie_genre" value="">
+            <input id="movie_poster" name="movie_poster" type="hidden" value="">
+            <input id="movie_title" name="movie_title" type="hidden" value="">
+            <input id="movie_director" name="movie_director" type="hidden" value="">
+            <input id="movie_year" name="movie_year" type="hidden" value="">
+            <input id="movie_actor" name="movie_actor" type="hidden" value="">
+            <input id="movie_genre" name="movie_genre" type="hidden" value="">
             <div>
                 <div class="input-group">
                     <div class="input-group-prepend">
