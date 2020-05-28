@@ -40,14 +40,14 @@
 
 <p>On the Add Film page, the user will find a form wherein they can search for a movie using OMDB API - this search will return the poster for every film containing the words sued in the search bar, and posts that data to the users database when chosen. The original plan for this site called for the user to add this information themselves, but this felt like bad UI - it was forcing the user to go to other sites to find this information, which would have made the overall user experience very clunky and laboured.</p>
 
-<p>Clicking 'Add To Collection' opens a modal containing a search bar. When a user searches in this bar, it returns the film posters associated with their search. The user can then click on the poster that they want to add to their database. Once this has been done, the user can fill in the textbox at the bottom of the form with their thoughts on the film and click the add button. Tjis will then return the user to their page, and present them with a card containing all of the information for that film, including the poster.</p>
+<p>Clicking 'Add To Collection' opens a modal containing a search bar. When a user searches in this bar, it returns the film posters associated with their search. The user can then click on the poster that they want to add to their database. Once this has been done, the user can fill in the textbox at the bottom of the form with their thoughts on the film and click the add button. This will then return the user to their page, and present them with a card containing all of the information for that film, including the poster.</p>
 
 
 <h3>Features Left To Implement</h3>
 
 <p>Ideally, I would like to code a version of this site that has full user profile pages, allowing users to read selected information about others and look at their stored collections. I would also like to implement a commenting system, allowing user to comment on each others reviews to create more of a social media type experience.</p>
 
-<p>I would also like to eventually implement full user reviews on each film. It was in the original plan, but was left out for the sake of streamlining and making sure the base elements were working. In future, I would like for users to be able to make each film in their collection into a full blog post.</p>
+<p>I would also like to eventually implement full user reviews on each film. It was in the original plan, but was left out for the sake of streamlining and making sure the base elements were working. In future, I would like for users to be able to make each film in their collection into a full blog post containing a review score, and potentially a hyperlink to the film trailer.</p>
 
 <h3>Javascript Functions</h3>
 

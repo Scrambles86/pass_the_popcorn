@@ -209,6 +209,23 @@ def delete_movie(movie_id):
     film.remove({'_id': ObjectId(movie_id)})
     return redirect(url_for('personal'))
 
+# Edit Review in Film from Database
+@APP.route('/edit_movie/<movie_id>')
+def edit_movie(movie_id):
+    chosen_movie = MONGO.db.movie_data.find_one({"_id": ObjectId(movie_id)})
+    all_data = MONGO.db.movie_data.find()
+    return render_template('edittask.html', task=chosen_movie, categories=all_data)
+
+
+@APP.route('/update_movie/<movie_id>', methods=["POST"])
+def update_movie(movie_id):
+    films = MONGO.db.movie_data
+    films.update({'_id': ObjectId(movie_id)},
+                 {
+                     'movie_score':request.form.get('movie_score'),
+                 })
+    return redirect(url_for('personal'))
+
 
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),
