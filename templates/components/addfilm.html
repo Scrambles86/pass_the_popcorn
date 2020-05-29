@@ -1,14 +1,15 @@
-
-
 <div id="addfilm" class="modal" tabindex="-1" role="dialog">
     {% include 'components/closebutton.html' %}  
-    <div class="modal-dialog" role="document">
+  
+    <div class="modal-dialog modal-header" role="document">
+            <h3>Use the search bar to look up films!</h3>
+    </div>
       <div class="modal-content">
-        <div class="modal-header"></div>
+        
 
     <!-- ID's passed in from JS to enable search function-->
 
-    <input id="search-text-new"></input>
+    <input id="search-text-new" placeholder="Please enter a movie title"></input>
     <button id="search-movie-new">Search</button>
     <div id="movies" class="row"></div>
 
@@ -23,15 +24,16 @@
             <input id="movie_actor" name="movie_actor" type="hidden" value="">
             <input id="movie_genre" name="movie_genre" type="hidden" value="">
             <div>
-                <div class="input-group">
+                <div id="movie-thoughts" class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">My Thoughts : </span>
                     </div>
-                    <textarea  id="movie_score" name="movie_score" value="" class="form-control" aria-label="With textarea"></textarea>
-                  </div>
-            <button type="submit" class="btn-success"">Add To My Collection</button>
+                    <textarea id="movie_score" name="movie_score" value="" class="form-control" aria-label="With textarea" placeholder="What did you think?"></textarea>
+                </div>
+                <button id="submit-movie" type="submit" class="btn-success" disabled>Add To My Collection</button>
             </div>
         </form>
         
     </div>     
 </div>
+

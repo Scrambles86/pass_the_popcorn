@@ -17,7 +17,11 @@
           <h3 class="card-row">My Thoughts</h3>
           <p>{{review.movie_score}}</p>
         </div>
-        <p>Delete : {% include 'components/deletefilm.html' %}</p>
+          <p>Edit:<a class="btn" href=""><i class="fas fa-edit"></i></a></p>
+      </a>
+        <div>
+        <p>Delete:{% include 'components/deletefilm.html' %}</p>
+        </div>
       </div>
     </div>
   </div>

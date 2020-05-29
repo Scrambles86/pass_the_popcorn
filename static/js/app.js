@@ -3,6 +3,7 @@
 
 $(document).ready(function () {
   $("#addfilm").hide();
+  $("#movie-thoughts").hide();
 
   $("#openAddModal").click(function() {
     $("#addfilm").show();
@@ -44,9 +45,10 @@ $(document).ready(function () {
         }
       } else {
         let myHTML =
-        `<div class="alert alert-primary" role="alert">
+        `<div class="col-sm-12">
+        <div class="alert alert-primary col" role="alert">
           ${resp.Error}
-        </div>`;
+        </div></div>`;
         $("#movies").append(myHTML);
       }
     });
@@ -54,8 +56,16 @@ $(document).ready(function () {
 
   $("#search-movie-new").click(function() {
     $("#movies").html("");
-    let searchText = $("#search-text-new").val();
-    searchFilmsByTitle(searchText);
+    if (!$("#search-text-new").val() || $("#search-text-new").val().length === 0) {
+      let myHTML =
+        `<div class="col-sm-12">
+        <div class="alert alert-primary col" role="alert">
+          ERROR: Please enter a movie title
+        </div></div>`;
+      $("#movies").append(myHTML);
+    } else {
+      searchFilmsByTitle($("#search-text-new").val());
+    }
   });
 
   // Allows user to use search function with the return key
@@ -68,6 +78,7 @@ $(document).ready(function () {
   // Highlights selected movie poster to user
   $(document).on("click", ".movie-select", function(e) {
     e.preventDefault();
+    $("#movie-thoughts").show();
     $("img.movie-image.movie-selected").removeClass("movie-selected");
     $(this).find(".movie-image").addClass("movie-selected");
     let movieId = this.id;
@@ -76,7 +87,6 @@ $(document).ready(function () {
       url: `https://www.omdbapi.com/?apikey=ac155d96&i=${movieId}`,
       dataType: "json"
     }).done(function(resp) {
-      console.log(resp.Director);
       if (resp.Response === 'True') {
         // initialising variables
         let moviePoster = resp.Poster;
@@ -93,52 +103,24 @@ $(document).ready(function () {
         $("#movie_actor").val(movieActors);
         $("#movie_genre").val(movieGenre);
       } else {
+        let myHTML =
+        `<div class="col-sm-12">
+        <div class="alert alert-primary col" role="alert">
+          ERROR: This movie doesn't appear to be valid! Try another one
+        </div></div>`;
+        $("#movies").append(myHTML);
         console.log(resp.Error);
       }
     });
   });
 
-  function searchMovieByTitle(title) {
-    let format = title.split(' ').join('+');  // replace spaces with plus
-    $.ajax({
-      url: `https://www.omdbapi.com/?apikey=ac155d96&t=${format}`,
-      dataType: "json"
-    }).done(function(resp) {
-      console.log(resp);
-      $(".movie-error").css("display", "none");
-      $(".movie-table").css("display", "block");
-      clearCard();
-
-      // initialising variables
-      let moviePoster = resp.Poster;
-      let movieTitle = resp.Title;
-      let movieYear = resp.Year;
-      let movieDirector = resp.Director;
-      let movieActors = resp.Actors;
-      let movieGenre = resp.Genre;
-
-
-      if (resp.Response === 'True') {
-        $("#movie_poster").attr("src",moviePoster);
-        $("#movie_title").append(movieTitle);
-        $("#movie_year").append(movieYear);
-        $("#movie_director").append(movieDirector);
-        $("#movie_starring").append(movieActors);
-        $("#movie_genre").append(movieGenre);
-      } else {
-        $(".movie-table").css("display", "none");
-        $(".movie-error").css("display", "block");
-        $(".movie-error").html(resp.Error);
-      }
-    });
-  }
-
-  // search button onClick
-  $("#search-movie").click(function() {
-    let searchText = $("#search-text").val();
-    searchMovieByTitle(searchText);
+  $("#movie_score").on('keyup change', function (){
+    if ($(".movie-selected")[0] && ($("#movie_score").val() || $("#movie_score").val().length !== 0)){
+      $('#submit-movie').prop("disabled", false);
+    } else {
+      $('#submit-movie').prop("disabled", true);
+    }
   });
-
 });
 
 // Get the modal

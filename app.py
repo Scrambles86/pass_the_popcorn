@@ -50,8 +50,8 @@ def personal():
         flash("You shall not pass! Please register or log in")
         return redirect(url_for('formpage'))
 
-@APP.route('/formpage')
-def formpage():
+@APP.route('/signin')
+def signin():
     """
 
     Renders login Page
@@ -59,8 +59,8 @@ def formpage():
     """
     return render_template("pages/loginpage.html")
 
-@APP.route('/newsignup')
-def newsignup():
+@APP.route('/signup')
+def signup():
     """
 
     Renders register Page
@@ -214,7 +214,7 @@ def delete_movie(movie_id):
 def edit_movie(movie_id):
     chosen_movie = MONGO.db.movie_data.find_one({"_id": ObjectId(movie_id)})
     all_data = MONGO.db.movie_data.find()
-    return render_template('edittask.html', task=chosen_movie, categories=all_data)
+    return render_template('components/editfilm.html', task=chosen_movie, categories=all_data)
 
 
 @APP.route('/update_movie/<movie_id>', methods=["POST"])

@@ -28,7 +28,8 @@ body {
     display: block;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
     left: 50%;
     top: 50%;
     width: 50%;
@@ -39,6 +40,8 @@ body {
     transform: translate(-50%, -50%);
     border: 3px solid #000000;
 }
+
+
 
 .close {
 color: #aaa;
@@ -87,8 +90,13 @@ cursor: pointer;
     cursor: pointer;
 }
 
-.movie-selected, .movie-image:hover {
-    border: 5px solid #42a4f5;
+.movie-image:hover {
+    border: 3px solid #42a4f5;
+    border-radius: 5px;
+}
+
+.movie-selected {
+    border: 3px solid #49a61e;
     border-radius: 5px;
 }
 
@@ -118,4 +126,13 @@ cursor: pointer;
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.edit-modal {
+    visibility: hidden;
+}
+
+#submit-movie:disabled {
+    background-color: #828282;
+    border-color: #828282;
 }
