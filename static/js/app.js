@@ -4,9 +4,14 @@
 $(document).ready(function () {
   $("#addfilm").hide();
   $("#movie-thoughts").hide();
+  $("editfilm").hide();
 
   $("#openAddModal").click(function() {
     $("#addfilm").show();
+  });
+
+  $("#openEditModal").click(function() {
+    $("#editfilm").show();
   });
 
   $("#closeModal, #closeButton").click(function() {

@@ -17,8 +17,10 @@
           <h3 class="card-row">My Thoughts</h3>
           <p>{{review.movie_score}}</p>
         </div>
-          <p>Edit:<a class="btn" href=""><i class="fas fa-edit"></i></a></p>
-      </a>
+          <a class="btn" id="openEditModal" href="{{ url_for('edit_movie', movie_id=review._id)}}">
+            <i class="fas fa-edit"></i>
+        </a>
+          {% include 'components/editfilm.html' %}
         <div>
         <p>Delete:{% include 'components/deletefilm.html' %}</p>
         </div>

@@ -214,7 +214,7 @@ def delete_movie(movie_id):
 def edit_movie(movie_id):
     chosen_movie = MONGO.db.movie_data.find_one({"_id": ObjectId(movie_id)})
     all_data = MONGO.db.movie_data.find()
-    return render_template('components/editfilm.html', task=chosen_movie, categories=all_data)
+    return render_template('components/editfilm.html', review=chosen_movie, categories=all_data)
 
 
 @APP.route('/update_movie/<movie_id>', methods=["POST"])
