@@ -96,6 +96,12 @@ and Flask functionality. Render template and redirect and used to render the pag
 
 <p>All of the Python functions have been tested to ensure that everything correctly posts to the database, and also hashes the passwords when users register. There were a lot of inital problems in having the API/JS function and Python function talk to each other and post film data to the DB. A huge help in solving this was in having the movie data post to a form when chosen, which made it much easier for the Python function to identify the required data.</p>
 
+<h3>Specific Function Testing</h3>
+
+<ul>
+<li></li>
+</ul>
+
 <h2>Deployment</h2>
 
 <p>Pass The Popcorn was deployed through <a href="https://dashboard.heroku.com/apps/pass-the-popcorn">Heroku</a> from the Github master. There is no difference between the development and deployment version of the site. All of the user and film information is stored on MongoDB and is sent through the Heroku app.</p>
