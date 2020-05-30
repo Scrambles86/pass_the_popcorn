@@ -121,7 +121,7 @@ cursor: pointer;
     border-radius: 5px;
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     list-style: none;
     margin: 0;
     padding: 0;

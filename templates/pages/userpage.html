@@ -3,20 +3,19 @@
 
 <!-- Buttons for adding and deleting -->
 <div class="container">
-<div class="container-fluid button-container row">
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <button id="openAddModal" class="btn film-button btn-success">Add To Collection</button>
-        {% include 'components/addfilm.html' %}
-      </div>
+    <div class="container-fluid button-container row">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            
+            <input id="search-text-new" placeholder="Please enter a movie title"></input>
+            <button id="search-movie-new">Search</button>
+            {% include 'components/addfilm.html' %}
+        </div>
+    </div>
 </div>
-</div>
+
 
 
 <!-- Card made to print the film information recieved from DB -->
-<div class="container">
-    <div class="card-deck row">
 {% include 'components/card.html' %}
-</div>
-</div>
         
 {% endblock %}

@@ -6,10 +6,6 @@ $(document).ready(function () {
   $("#movie-thoughts").hide();
   $("editfilm").hide();
 
-  $("#openAddModal").click(function() {
-    $("#addfilm").show();
-  });
-
   $("#openEditModal").click(function() {
     $("#editfilm").show();
   });
@@ -60,6 +56,7 @@ $(document).ready(function () {
   }
 
   $("#search-movie-new").click(function() {
+    $("#addfilm").show();
     $("#movies").html("");
     if (!$("#search-text-new").val() || $("#search-text-new").val().length === 0) {
       let myHTML =
