@@ -1,36 +1,32 @@
 <div id="addfilm" class="modal" tabindex="-1" role="dialog">
-    {% include 'components/closebutton.html' %}  
-  
-    
-      <div class="modal-content">
-        
+    {% include 'components/closebutton.html' %}
+    <div class="modal-content">
+        <!-- ID's passed in from JS to enable search function-->
 
-    <!-- ID's passed in from JS to enable search function-->
+        <div id="movies" class="row results"></div>
 
-    <div id="movies" class="row"></div>
+        <!-- Form for printing the results of the search function and button to post to DB -->
 
-    <!-- Form for printing the results of the search function and button to post to DB -->
+        <div>
+            <form id="movie_post" action="{{ url_for('add_review')}}" method="POST">
+                <input id="movie_poster" name="movie_poster" type="hidden" value="">
+                <input id="movie_title" name="movie_title" type="hidden" value="">
+                <input id="movie_director" name="movie_director" type="hidden" value="">
+                <input id="movie_year" name="movie_year" type="hidden" value="">
+                <input id="movie_actor" name="movie_actor" type="hidden" value="">
+                <input id="movie_genre" name="movie_genre" type="hidden" value="">
+                <div>
 
-    <div>
-        <form id="movie_post" action="{{ url_for('add_review')}}" method="POST">
-            <input id="movie_poster" name="movie_poster" type="hidden" value="">
-            <input id="movie_title" name="movie_title" type="hidden" value="">
-            <input id="movie_director" name="movie_director" type="hidden" value="">
-            <input id="movie_year" name="movie_year" type="hidden" value="">
-            <input id="movie_actor" name="movie_actor" type="hidden" value="">
-            <input id="movie_genre" name="movie_genre" type="hidden" value="">
-            <div>
-                
-                <div id="movie-thoughts" class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">My Thoughts : </span>
+                    <div id="movie-thoughts" class="input-group results">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">My Thoughts : </span>
+                        </div>
+                        <textarea id="movie_score" name="movie_score" value="" class="form-control"
+                            aria-label="With textarea" placeholder="What did you think?"></textarea>
                     </div>
-                    <textarea id="movie_score" name="movie_score" value="" class="form-control" aria-label="With textarea" placeholder="What did you think?"></textarea>
+                    <button id="submit-movie" type="submit" class="btn-success" disabled>Add To My Collection</button>
                 </div>
-                <button id="submit-movie" type="submit" class="btn-success" disabled>Add To My Collection</button>
-            </div>
-        </form>
-        
-    </div>     
-</div>
+            </form>
 
+        </div>
+    </div>

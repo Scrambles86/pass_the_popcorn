@@ -22,6 +22,21 @@ body {
     opacity: 0.9;
 }
 
+/* Search Bar styling */
+
+.search-style {
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #d94843;
+    font-family: 'Gotu', sans-serif;
+    width: 100%;
+}
+
+.bar-style {
+    width: 60%;
+    margin-bottom: 10px;
+}
+
 /* Styling for close button and modal */
 
 .modal {
@@ -41,6 +56,9 @@ body {
     border: 3px solid #000000;
 }
 
+.btn-success {
+    width: 100%;
+}
 
 
 .close {
@@ -139,16 +157,16 @@ cursor: pointer;
     background-image: url("https://img.wallpapersafari.com/phone/750/1334/86/49/6ejrdw.jpg");
 }
 
-.edit-icon {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
+.edit-icon,
+.delete-icon {
+ display: inline-block;
+    margin: 0 10px;
+   
 }
 
-.delete-icon {
-    float: right;
-    width: 33.33%;
-    padding: 5px;
-    padding-bottom: 5px;
-  }
+.results {
+    background-color: #d94843;
+    padding-top: 10px;
+}
+
 
