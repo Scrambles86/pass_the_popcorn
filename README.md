@@ -99,7 +99,18 @@ and Flask functionality. Render template and redirect and used to render the pag
 <h3>Specific Function Testing</h3>
 
 <ul>
-<li></li>
+<li>Add User Function</li>
+<p>The first function created for this app in relation to the database was the add user and register function. The reason this was the inital creation is because I was keen for this app to be a personal diary, so being able to log in and out was essential.As this was the first function that I created in Python, I ran into numerous blocks. The tutor team proved vital here, and point me in the direction of a function created by <a href="https://github.com/MiroslavSvec">Miro_alumni</a>, which proved an invaluable learning tool.</p> <p>From checking through this function, I was able to ascertain numerous areas wherein I was making errors - perhaps most importantly was that I was unaware of the session function the can be imported from Flask. I was comfortable with creating functions that return users to the correct templates, but was unable to figure out how to define a specific user, so learning about session helped immeasurably.</p> <p>In addition, Miro_alumni's function pointed out several things I hadn't even considered - how the site should behave if a user is logged in, what it should do if the user isn't registered, and how to check that passwords matched. I had initially attempted to log hashed passwords with bcrypt, but founc werkzeug security to be a much easier tool to import and work with. From looking at the function sent to me, I was able to discern how to properly apply the checking of hashed passwords.</p>
+</ul>
+
+<ul>
+<li>Add Film Function</li>
+<p>Setting up the add user function was vital in showing me how to talk to the database from my code. As a result, the add film function was comparatively easy to set up, but still presented issues - namely that I could post to the database, but I wasn't getting any information back. Tim Nelson on the tutor team was an immense help here, and noted that most of my problem were being caused by syntactical issues - my parameters all contained hyphens instead of underscores, and hyphens do not work with PyMongo. Once he noted this and all of the issues were corrected, he also helped me with how to incorporate the user into this function so that it only rendered the information that they themselves have posted on their page, as opposed to returning everything that is logged to the database.</p>
+</ul>
+
+<ul>
+<li>Edit Function</li>
+<p>The edit function was built after the add and delete functions, as it was important for me to check that the data was arriving in and exiting from the database correctly before I started to play around with it. In it's initial stage, I was unable to get this function working as I was approaching it in a similar manner to the previous two functions, and trying to get all of the information crammed into the same function.</p> <p>Upon speaking to the tutors, I was advised that I needed to split this function and create two instances - one where the information for updating it indentified, and one where that information is then updated. After testing this, I found that the function was posting to the database, but in doing so was deleting the original database entry. Instead of an updated review form, I was instead getting a databse entry containing only the updated review, and the card itself was disappearing from the user's page. After checking this with the tutors once more, I found that I was missing the $set operator from the function - once this was added in the edit function began behaving correctly.</p>
 </ul>
 
 <h2>Deployment</h2>

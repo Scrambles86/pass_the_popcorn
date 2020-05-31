@@ -168,11 +168,14 @@ cursor: pointer;
     margin: 5px;
 }
 
+.card-icon {
+    background-color: antiquewhite;
+    margin: 5px;
+}
+
 .edit-icon,
 .delete-icon {
- display: inline-block;
-    margin: 0 10px;
-   
+ display: inline;
 }
 
 .results {

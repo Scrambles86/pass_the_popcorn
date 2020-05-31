@@ -12,16 +12,13 @@
         <h4 class="card-title">My Thoughts</h4>
         <p>{{review.movie_score}}</p>
       </div>
-      <div class="card-text row">
-        <div class="col-sm-4">
+      <div class="card-icon row">
         <a class="btn" id="openEditModal" href="{{ url_for('edit_movie', movie_id=review._id)}}"><i
             class="fas fa-edit"></i>
-        {% include 'components/editfilm.html' %}</a>
+          {% include 'components/editfilm.html' %}</a>
+        <div class="card-icon row">
+          <a class="btn">{% include 'components/deletefilm.html' %}</a>
         </div>
-      <div class="col-sm-4">
-        <a>{% include 'components/deletefilm.html' %}</a>
-        </a>
-      </div>
       </div>
     </div>
   </div>
