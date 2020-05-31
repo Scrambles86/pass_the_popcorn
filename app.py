@@ -221,8 +221,10 @@ def edit_movie(movie_id):
 def update_movie(movie_id):
     films = MONGO.db.movie_data
     films.update({'_id': ObjectId(movie_id)},
-                 {
-                     'movie_score':request.form.get('movie_score'),
+                 {'$set':
+                  {
+                      'movie_score':request.form.get('movie_score'),
+                  }
                  })
     return redirect(url_for('personal'))
 
