@@ -32,7 +32,7 @@ def index():
     Renders Index Page
 
     """
-    return render_template("pages/index.html")
+    return render_template("pages/index.html", isIndex=True)
 
 @APP.route('/personal')
 def personal():
