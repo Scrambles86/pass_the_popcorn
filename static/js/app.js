@@ -4,25 +4,10 @@
 $(document).ready(function () {
   $("#addfilm").hide();
   $("#movie-thoughts").hide();
-  $("editfilm").hide();
-
-  $("#openEditModal").click(function() {
-    $("#editfilm").show();
-  });
 
   $("#closeModal, #closeButton").click(function() {
     $("#addfilm").hide();
   });
-
-  function clearCard() {
-    $("#movie_poster").attr("src","");
-    $("#movie_title").html("");
-    $("#movie_year").html("");
-    $("#movie_director").html("");
-    $("#movie_starring").html("");
-    $("#movie_genre").html("");
-    $("movie_score").html("");
-  }
 
   // Adds functionality to search bar, returning movie images related to the user's search
   function searchFilmsByTitle(title) {
@@ -124,29 +109,3 @@ $(document).ready(function () {
     }
   });
 });
-
-// Get the modal
-var modal = document.getElementById("infoModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("infoButton");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}

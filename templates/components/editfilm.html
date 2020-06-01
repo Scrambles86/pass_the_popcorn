@@ -1,16 +1,13 @@
-{% for review in user_reviews %}
-<div class="modal edit-modal" >
-    <form id="movie_post" action="{{ url_for('update_movie', movie_id=review._id)}}" method="POST">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">My Thoughts : </span>
-                </div>
-                <textarea  id="movie_score" name="movie_score" value="" class="form-control" aria-label="With textarea">{{review.movie_score}}</textarea>
-              </div>
-              {% endfor %}
-              <button type="submit" class="btn-success" >Update</button>
+<div id="editmodal" class="modal"></div>
+{% include 'components/closebutton.html' %}
+  <form id="movie_post" action="{{ url_for('update_movie', movie_id=review._id)}}" method="POST">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">My Thoughts : </span>
         </div>
-    </form>
-    
+        <textarea id="movie_score" name="movie_score" value="" class="form-control" aria-label="With textarea"></textarea>
+        <button type="submit" class="btn-success">Update</button>
+      </div>
+  </form>
 </div>     
 

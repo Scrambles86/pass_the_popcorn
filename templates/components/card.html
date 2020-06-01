@@ -9,18 +9,19 @@
         <p>Released : {{review.movie_year}}</p>
         <p>Genre : {{review.movie_genre}}</p>
         <p>Starring : {{review.movie_actor}}</p>
-        <h4 class="card-title">My Thoughts</h4>
+        <h4 class="card-title">My Review</h4>
         <p>{{review.movie_score}}</p>
       </div>
-      <div class="card-icon row">
-        <a class="btn" id="openEditModal" href="{{ url_for('edit_movie', movie_id=review._id)}}"><i
-            class="fas fa-edit"></i>
-          {% include 'components/editfilm.html' %}</a>
-        <div class="card-icon row">
+      <!-- Card Footer -->
+      <div class="card-footer card-icon">
+        <a class="btn" id="openEditModal" href="{{ url_for('edit_movie', movie_id=review._id)}}">
+          {% include 'components/editfilm.html' %}
+          <i class="fas fa-edit"></i>
+        </a>
           <a class="btn">{% include 'components/deletefilm.html' %}</a>
-        </div>
       </div>
+  
     </div>
   </div>
-  {% endfor %}
 </div>
+{% endfor %}

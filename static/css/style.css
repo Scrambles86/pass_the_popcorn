@@ -28,9 +28,15 @@ body {
 .search-style {
     margin-bottom: 30px;
     text-align: center;
-    background-color: #d94843;
+    background-image: url("https://i.pinimg.com/originals/32/2a/6f/322a6f0836e1e05b582059b0320e2cf2.jpg");
     font-family: 'Gotu', sans-serif;
     width: 100%;
+    border-style: solid;
+}
+
+.heading-style {
+    color: #ffffff;
+    padding: 5px;
 }
 
 .bar-style {
@@ -39,6 +45,14 @@ body {
 }
 
 /* Styling for close button and modal */
+
+.header-bg {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-left: 5px;
+    border-style: solid;
+    width: 100%;
+}
 
 .modal {
     display: block;
@@ -171,17 +185,14 @@ cursor: pointer;
 
 .card-icon {
     background-color: antiquewhite;
-    margin: 5px;
-}
-
-.edit-icon,
-.delete-icon {
- display: inline;
+    display: inline-block;
 }
 
 .results {
     background-color: #d94843;
     padding-top: 10px;
 }
+
+
 
 

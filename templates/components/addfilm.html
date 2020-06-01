@@ -1,5 +1,6 @@
 <div id="addfilm" class="modal" tabindex="-1" role="dialog">
     {% include 'components/closebutton.html' %}
+    <h4 class="header-bg">Click to choose a movie and add your review below!</h4>
     <div class="modal-content">
         <!-- ID's passed in from JS to enable search function-->
 
@@ -18,9 +19,6 @@
                 <div>
 
                     <div id="movie-thoughts" class="input-group results">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">My Thoughts : </span>
-                        </div>
                         <textarea id="movie_score" name="movie_score" value="" class="form-control"
                             aria-label="With textarea" placeholder="What did you think?"></textarea>
                     </div>
