@@ -48,7 +48,7 @@ def personal():
         return render_template("pages/userpage.html", user_reviews=user_reviews)
     else:
         flash("You shall not pass! Please register or log in")
-        return redirect(url_for('formpage'))
+        return redirect(url_for('signup'))
 
 @APP.route('/signin')
 def signin():

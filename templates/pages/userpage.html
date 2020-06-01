@@ -4,7 +4,7 @@
 <!-- Search bar the open modal with movie posters -->
 <section class="search-style">
     <span>
-        <h2>My Movie Collection</h2>
+        <h2>{{session["user"]}}'s Movie Collection</h2>
         <input class="bar-style" id="search-text-new" placeholder="Please enter a movie title"></input>
         <button id="search-movie-new">Search</button>
         {% include 'components/addfilm.html' %}
