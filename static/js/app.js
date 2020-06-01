@@ -3,10 +3,10 @@
 
 $(document).ready(function () {
   $("#addfilm").hide();
-  $("#movie-thoughts").hide();
+  $("#editmodal").hide();
 
   $("#closeModal, #closeButton").click(function() {
-    $("#addfilm").hide();
+    $("#addfilm, #editmodal").hide();
   });
 
   // Adds functionality to search bar, returning movie images related to the user's search
@@ -60,6 +60,11 @@ $(document).ready(function () {
     if (e.keyCode === 13) {
     $("#search-movie-new").click();
     }
+  });
+
+  // Opens Edit Modal on card
+  $("#openEditModal").click(function() {
+    $("#editmodal").show();
   });
 
   // Highlights selected movie poster to user
