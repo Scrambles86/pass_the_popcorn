@@ -102,6 +102,7 @@ MongoDb stores the following types of data for this app :
 </ul>
 
 <h4>Movie Data Collection</h4>
+
 | Title 	| Key In Collection 	| Data Type 	|
 |-	|-	|-	|
 | _id 	| _id 	| ObjectId 	|
@@ -115,24 +116,14 @@ MongoDb stores the following types of data for this app :
 
 
 <h4>User Collection</h4>
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-0pky">Title</th>
-    <th class="tg-0pky">Key In Collection</th>
-    <th class="tg-0pky">Data Type</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
+
+| Title 	| Key In Collection 	| Data Type 	|
+|-	|-	|-	|
+| _id 	| _id 	| ObjectId 	|
+| Username 	| username 	| String 	|
+| Email 	| email 	| String 	|
+| Password 	| password 	| String 	|
+
 <h3>Testing</h3>
 
 <p>Pass The Popcorn has been tested on Mozilla Firefox and Google Chrome internet browsers, on both a Macbook Pro and a desktop PC. There are no differences between the two, with the Bootstrap providing compatability between a variety of devices. Pass The Popcorn has also been tested on a Kindle Fire tablet and and iPhone8, with no functionality issues. The code for Pass The Popcorn was written in Virtual Studio Code.</p>
