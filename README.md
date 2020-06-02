@@ -132,6 +132,8 @@ MongoDb stores the following types of data for this app :
 | Email 	| email 	| String 	|
 | Password 	| password 	| Binary 	|
 
+<p>Examples of these schemas as they are used in the database can be found <a href="https://github.com/Scrambles86/pass_the_popcorn/tree/master/data/schemas">here.</a></p>
+
 <h3>Testing</h3>
 
 <p>Pass The Popcorn has been tested on Mozilla Firefox and Google Chrome internet browsers, on both a Macbook Pro and a desktop PC. There are no differences between the two, with the Bootstrap providing compatability between a variety of devices. Pass The Popcorn has also been tested on a Kindle Fire tablet and and iPhone8, with no functionality issues. The code for Pass The Popcorn was written in Virtual Studio Code.</p>
