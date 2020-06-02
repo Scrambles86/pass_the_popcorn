@@ -101,10 +101,10 @@ def user_auth():
             return redirect(url_for('personal', user=user_in_db['username']))           
         else:
             flash("Incorrect password or user name")
-            return redirect(url_for('formpage'))
+            return redirect(url_for('login'))
     else:
         flash("No user found. Please register")
-        return redirect(url_for('formpage'))
+        return redirect(url_for('login'))
 
 # Register function for new users
 @APP.route('/register', methods=['GET', 'POST'])
@@ -125,7 +125,7 @@ def register():
             user = USERS_COLLECTION.find_one({"username" : form['username']})
             if user:
                 flash(f"{form['username']} already exists!")
-                return redirect(url_for('formpage'))
+                return redirect(url_for('login'))
             else:                
                 hash_pass = generate_password_hash(form['user_password'])
                 USERS_COLLECTION.insert_one(
@@ -141,11 +141,11 @@ def register():
                     return redirect(url_for('personal', user=user_in_db['username']))
                 else:
                     flash("Sorry, something went wrong")
-                    return redirect(url_for('formpage'))
+                    return redirect(url_for('login'))
         else:
             flash("Passwords dont match!")
-            return redirect(url_for('formpage'))     
-    return redirect(url_for('formpage'))
+            return redirect(url_for('login'))     
+    return redirect(url_for('login'))
 
 # Log out
 @APP.route('/logout')
