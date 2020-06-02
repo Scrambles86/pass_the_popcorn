@@ -253,7 +253,7 @@ pip3 freeze > requirements.txt
 <p>3 - Then create your <strong>Procfile</strong> by entering the following into the terminal : </p>
 
 ```
-<li>$ echo web: python app.py > Procfile</li>
+echo web: python app.py > Procfile
 ```
 
 <p>4 - Push these files to your repository</p>
