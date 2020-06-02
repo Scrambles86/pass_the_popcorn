@@ -1,0 +1,10 @@
+[{
+    "_id": "<ObjectId()>",
+    "movie-poster": "<string>",
+    "movie-title": "<string>",
+    "movie-director": "<string>",
+    "movie-year": "<string>",
+    "movie-actor": "<string>",
+    "movie-genre": "<string>",
+    "reviewed-by": "<string>"
+}]

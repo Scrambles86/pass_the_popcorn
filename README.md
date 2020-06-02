@@ -106,6 +106,7 @@ MongoDb stores the following types of data for this app :
 <li>String</li>
 <li>Array</li>
 <li>Object</li>
+<li>Binary</li>
 </ul>
 
 <h4>Movie Data Collection</h4>
@@ -129,7 +130,7 @@ MongoDb stores the following types of data for this app :
 | _id 	| _id 	| ObjectId 	|
 | Username 	| username 	| String 	|
 | Email 	| email 	| String 	|
-| Password 	| password 	| String 	|
+| Password 	| password 	| Binary 	|
 
 <h3>Testing</h3>
 
@@ -202,7 +203,7 @@ MongoDb stores the following types of data for this app :
 <li>PIP</li>
 <li>Python 3</li>
 <li>Flask</li>
-<p>You will also need an account with <strong>MongoDB Atlas</strong><</p>
+<p>You will also need an account with <strong>MongoDB Atlas</strong></p>
 </ul>
 
 
