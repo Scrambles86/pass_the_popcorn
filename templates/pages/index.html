@@ -6,10 +6,13 @@
     <h1 class="display-3">Pass The Popcorn</h1>
     <p class="lead">Your personal movie diary!</p>
     <span>
-      <p>Head to Manage Collection to add films to your collection!</p>
+      <h4>Love films? Want to keep track of everything you've seen? Pass The Popcorn is your personal movie diary - log in to start adding to your collection!</h4>
     </span>
     <span>
-      <p>First time? Learn how to get started <a>here</a></p>
+      <ul class="index-info">
+      <li><h4>First time? Register <a href="{{ url_for('signup') }}">here</a></h4></li>
+      <li><h4>Returning? Welcome back! Log in <a href="{{ url_for('signin') }}">here</a></h4></li>
+    </ul>
     </span>
 </div>
 

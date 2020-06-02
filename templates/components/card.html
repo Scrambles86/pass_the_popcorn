@@ -14,11 +14,10 @@
       </div>
       <!-- Card Footer -->
       <div class="card-footer card-icon">
-        <a class="btn" id="openEditModal">
-          {% include 'components/editfilm.html' %}
+        <a class="btn" id="openEditModal"> Edit :{% include 'components/editfilm.html' %}
           <i class="fas fa-edit" onclick="displayModal('film-{{review._id}}')"></i>
         </a>
-          <a class="btn">{% include 'components/deletefilm.html' %}</a>
+          <a class="btn">Delete :{% include 'components/deletefilm.html' %}</a>
       </div>
   
     </div>

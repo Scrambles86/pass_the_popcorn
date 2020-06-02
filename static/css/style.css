@@ -4,6 +4,10 @@ body {
     font-family: 'Gotu', sans-serif;
 }
 
+.index-info {
+    margin-top : 30px;
+}
+
 /* Navbar styling */
 .navbar {
     margin-bottom: 50px;

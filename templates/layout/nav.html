@@ -12,19 +12,13 @@
         <a class="nav-link" href="{{ url_for('index') }}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('signup') }}">Log In/Register</a>
+        <a class="nav-link" href="{{ url_for('signup') }}">Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('personal') }}">My Collection</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+        <a class="nav-link" href="{{ url_for('signin') }}">Log In</a>
       </li>
       {% else %}
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('personal') }}">My Collection</a>
         </li>
