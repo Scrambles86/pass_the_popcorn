@@ -1,5 +1,7 @@
 <h1>Pass The Popcorn</h1>
 
+<img src="wireframes/mockup.png"></img>
+
 <p>Pass The Popcorn is my third major project. The original idea behind PTP was that it would be a user to user movie review site. The site would have allowed users to upload an image from the film - preferably the poster - and asks them to fill out a few key details of the film to make reviews as readable as possible for other users.</p>
 
 <p>Whilst this was the original goal, it pivoted slightly through development. The site now operates more as a personal film collection, where users can track their the films that they have seen and log them to a Mongo Database. I still appreciate the idea of having a peer to peer movie review site, but due to the seperate users and databases required, it made more sense to first create a personal collection, and add reviewing and social media elements afterwards.</p>
@@ -14,6 +16,9 @@
 <li>I am a Film Studies teacher, and would like to log a database of all the films that I have seen for my students to peruse.</li>
 <li>I am a parent looking for recommendations on a good film to watch with my kids</li>
 <li>I am a Film Studies student, and would like to make a log of films that I haven't yet seen in order to expand my knowledge</li>
+<li>As a user, I expect all of the relevant information to be found for me when I use a search function.</li>
+<li>As a user, I expect to be able to edit posts I have made when I have made an error or changed my mind about posting.</li>
+<li>As a user, I expect to be prompted on how to proceed with an app when I have logged in.</li>
 </ul>
 
 <h3>Wireframes</h3>
@@ -164,7 +169,7 @@ and Flask functionality. Render template and redirect and used to render the pag
 
 <h2>Acknowledgments</h2>
 
-<p>A huge thank you as always to my mentor, Simen Daehlin, who was instrumental in pushing me through this project, and continues to be a huge source of knowledge</p>
+<p>A huge thank you as always to my mentor, <a href="https://github.com/Eventyret">Simen Daehlin</a>, who was instrumental in pushing me through this project, and continues to be a huge source of knowledge</p>
 
 <p>Huge thanks as well to everyone on the Code Institute tutorial team, all of whom I have recieved help from throughout this project. In particular, thanks to <a href="https://github.com/TravelTimN">Tim Nelson</a>, who was a tremendous help in showing me how to correctly wire up the code to the DB.</p>
 
