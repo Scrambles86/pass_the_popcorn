@@ -1,5 +1,10 @@
 /* global $ */
 
+function displayModal(modalId) {
+  let modal = document.getElementById(modalId)
+  console.log(modal)
+  modal.style.display = 'block';
+}
 
 $(document).ready(function () {
   $("#addfilm").hide();
@@ -8,12 +13,6 @@ $(document).ready(function () {
   $("#closeModal, #closeButton").click(function() {
     $("#addfilm, #editmodal").hide();
   });
-
-  function displayModal(modalId) {
-    let modal = document.getElementById(modalId)
-    console.log(modal)
-    modal.style.display = 'block';
-  }
 
   // Adds functionality to search bar, returning movie images related to the user's search
   function searchFilmsByTitle(title) {
