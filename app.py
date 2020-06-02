@@ -25,13 +25,8 @@ MOVIE_COLLECTION = MONGO.db.movie_data
 # Page Rendering
 
 @APP.route('/')
-@APP.route('/index')
 def index():
-    """
-
-    Renders Index Page
-
-    """
+    """ Renders Index Page """
     return render_template("pages/index.html")
 
 @APP.route('/personal')
@@ -41,7 +36,6 @@ def personal():
     Find's movies added by user based on reviewed-by object
     Renders User Page
     Returns user to login page if not logged in
-
     """
     if 'user' in session:
         user_reviews = MOVIE_COLLECTION.find({"reviewed_by": session["user"]})
@@ -53,18 +47,14 @@ def personal():
 @APP.route('/signin')
 def signin():
     """
-
     Renders login Page
-
     """
     return render_template("pages/loginpage.html")
 
 @APP.route('/signup')
 def signup():
     """
-
     Renders register Page
-
     """
     return render_template("pages/register.html")
 
@@ -85,8 +75,8 @@ def login():
         return redirect(url_for('personal'))
 
 # Check user login details from login form
-@APP.route('/user_auth', methods=['POST'])
-def user_auth():
+@APP.route('/auth', methods=['POST'])
+def auth():
     """
     Checks if user is in DB
     Makes sure that password matches hashed password
@@ -172,8 +162,8 @@ def profile(user):
         return redirect(url_for('login'))
 
 # Add film to database
-@APP.route("/add_review", methods=["GET", "POST"])
-def add_review():
+@APP.route("/addreview", methods=["GET", "POST"])
+def addreview():
     """
     Checks User is in session
     Inserts User's chosen film data to DB
@@ -199,8 +189,8 @@ def add_review():
         return redirect(url_for('login'))
 
 # Delete Film from Database
-@APP.route('/delete_movie/<movie_id>', methods=['GET', 'POST'])
-def delete_movie(movie_id):
+@APP.route('/deletemovie/<movie_id>', methods=['GET', 'POST'])
+def deletemovie(movie_id):
     """
     Checks database for movie id
     Removes id from database
@@ -210,15 +200,15 @@ def delete_movie(movie_id):
     return redirect(url_for('personal'))
 
 # Edit Review in Film from Database
-@APP.route('/edit_movie/<movie_id>')
-def edit_movie(movie_id):
+@APP.route('/editmovie/<movie_id>')
+def editmovie(movie_id):
     chosen_movie = MONGO.db.movie_data.find_one({"_id": ObjectId(movie_id)})
     all_data = MONGO.db.movie_data.find()
     return render_template('components/editfilm.html', review=chosen_movie, categories=all_data)
 
 
-@APP.route('/update_movie/<movie_id>', methods=["POST"])
-def update_movie(movie_id):
+@APP.route('/updatemovie/<movie_id>', methods=["POST"])
+def updatemovie(movie_id):
     films = MONGO.db.movie_data
     films.update({'_id': ObjectId(movie_id)},
                  {'$set':
@@ -232,4 +222,4 @@ def update_movie(movie_id):
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=os.environ.get('DEBUG'))
