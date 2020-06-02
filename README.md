@@ -241,26 +241,45 @@ Python3 app.py
 
 <h2>Heroku Deployment</h2>
 
-<p>In order to deply to heroku, you will first need a Heroku account. Once you have one, use the command heroku login in the terminal. Clone the repository and change the directory in your terminal :</p>
+<p>1 - In order to deply to Heroku, you will first need a Heroku account. Once you have one, use the command heroku login in the terminal.</p>
 
-<ul>
-<li>$ heroku git:clone -a pass_the_popcorn</li> 
-<li>$ cd pass_the_popcorn</li>
-</ul>
+<p>2 - From here, create your <strong>requirements.txt</strong> file by entering the following into the terminal :</p>
 
-<p>from here you will need to create a requirements.txt file and Procfile in order to ensure that the app runs on Heroku using all the technologies used in Pass The Popcorn. You can do this by running the following commands in your terminal :</p>
+```
+pip3 freeze > requirements.txt
+```
 
-<ul>
-<li>$ pip freeze --local > requirements.txt</li>
+<p>3 - Then create your <strong>Procfile</strong> by entering the following into the terminal : </p>
+
+```
 <li>$ echo web: python app.py > Procfile</li>
-</ul>
+```
 
-<p>From here, perform and add and a commit and push to heroku master. Once you arrive at the app, you will need to amend the config vars. You can do this in the settings tab. You'll need to change the IP and PORT.</p>
+<p>4 - Push these files to your repository</p>
 
-<ul>
-<li>IP - 0.0.0.0</li>
-<li>PORT - 5000</li>
-</ul>
+<p>5 - From your Heroku dashboard, create a new app.</p>
+
+<p>6 - Make sure you set your delpoyment method - you can do this by clicking on the button marked Deployment Method. In this instance, you will set this to Github</p>
+
+<p>7 - Go to the settings tab and click the button marked Config Vars. From here you will need to set the following :</p>
+
+```
+IP - 0.0.0.0
+```
+
+```
+PORT - 5000
+```
+
+```
+SECRET_KEY - 'my_secret_key'
+```
+
+```
+MONGO_URI - mongodb+srv://:@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
+```
+
+<p>8 - Back on the dashboard, click the <strong>deploy</strong> button.</p>
 
 <h2>Acknowledgments</h2>
 
