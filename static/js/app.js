@@ -9,6 +9,12 @@ $(document).ready(function () {
     $("#addfilm, #editmodal").hide();
   });
 
+  function displayModal(modalId) {
+    let modal = document.getElementById(modalId)
+    console.log(modal)
+    modal.style.display = 'block';
+  }
+
   // Adds functionality to search bar, returning movie images related to the user's search
   function searchFilmsByTitle(title) {
     let format = title.split(' ').join('+');  // replace spaces with plus
