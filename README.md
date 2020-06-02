@@ -194,18 +194,26 @@ MongoDb stores the following types of data for this app :
 
 <p>Pass The Popcorn was deployed through <a href="https://dashboard.heroku.com/apps/pass-the-popcorn">Heroku</a> from the Github master. There is no difference between the development and deployment version of the site. All of the user and film information is stored on MongoDB and is sent through the Heroku app.</p>
 
-<p>In order to deploy Pass the Popcorn, make sure the following are installed on your IDE (I recommend VSCode or Github) :</p>
+<h3>Cloning PTP From Github</h3>
+
+<p>You will need the following languages and toolkits installed :</p>
 <ul>
 <li>git</li>
 <li>PIP</li>
 <li>Python 3</li>
 <li>Flask</li>
+</ul>
+<p>You will also need an account with :</p>
+<ul>
 <li>MongoDB Atlas</li>
 </ul>
 
-<p>From the terminal, run the following commands</p>
 <ul>
-<li>$ git clone https://github.com/Scrambles86/pass_the_popcorn.git</li>
+<p>From the terminal, run the following commands</p>
+```bash
+git clone https://github.com/Scrambles86/pass_the_popcorn
+```
+<li> 1 : $ git clone </li>
 <li>$ pip install --upgrade pip</li>
 <li>$ pip install -r requirements.txt</li>
 <li>$ python -m flask run</li>
