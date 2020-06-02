@@ -210,9 +210,11 @@ MongoDb stores the following types of data for this app :
 
 <ul>
 <p>From the terminal, run the following commands</p>
-```bash
+
+```
 git clone https://github.com/Scrambles86/pass_the_popcorn
 ```
+
 <li> 1 : $ git clone </li>
 <li>$ pip install --upgrade pip</li>
 <li>$ pip install -r requirements.txt</li>
