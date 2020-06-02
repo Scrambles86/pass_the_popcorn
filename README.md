@@ -77,14 +77,21 @@ and Flask functionality. Render template and redirect and used to render the pag
 
 <h3>Technologies Used</h3>
 
+<h4>Languages</h4>
+
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
 <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
-<li><a href="https://getbootstrap.com/">Bootstrap</a></li>
 <li><a href="https://jquery.com/">JQuery</a></li>
 <li><a href="https://www.javascript.com/">Javascript</a></li>
-<li><a href="https://fonts.google.com/">Google Fonts</a></li>
+<li><a href="https://www.json.org/json-en.html">JSON</a></li>
 <li><a href="https://www.python.org/">Python</a></li>
+</ul>
+
+<h4>Libraries</h4>
+<ul>
+<li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="https://fonts.google.com/">Google Fonts</a></li>
 <li><a href="https://www.mongodb.com/">MongoDB</a></li>
 <li><a href="https://www.omdbapi.com/">OMDB API</a></li>
 <li><a href="https://pypi.org/project/Flask/">Flask</a></li>
