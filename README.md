@@ -89,9 +89,38 @@ and Flask functionality. Render template and redirect and used to render the pag
 <li><a href="https://www.omdbapi.com/">OMDB API</a></li>
 <li><a href="https://pypi.org/project/Flask/">Flask</a></li>
 <li><a href="https://dashboard.heroku.com/login">Heroku</a></li>
-
-
 </ul>
+
+<h3>MongoDB Data</h3>
+
+MongoDb stores the following types of data for this app :
+<ul>
+<li>ObjectId</li>
+<li>String</li>
+<li>Array</li>
+<li>Object</li>
+</ul>
+
+<h4>Movie Data Collection</h4>
+| Title 	| Key In Collection 	| Data Type 	|
+|-	|-	|-	|
+| _id 	| _id 	| ObjectId 	|
+| Movie Poster 	| movie-poster 	| String 	|
+| Movie Title 	| movie-title 	| String 	|
+| Movie Director 	| movie-director 	| String 	|
+| Movie Year 	| movie-year 	| String 	|
+| Movie Actor 	| movie-actor 	| String 	|
+| Movie Genre 	| movie-genre 	| String 	|
+| Reviewed By 	| reviewed-by 	| String 	|
+
+
+<h4>User Collection</h4>
+| Title 	| Key In Collection 	| Data Type 	|
+|-	|-	|-	|
+| _id 	| _id 	| ObjectId 	|
+| Username 	| username 	| String 	|
+| Email 	| email 	| String 	|
+| Password 	| password 	| String 	|
 
 <h3>Testing</h3>
 
