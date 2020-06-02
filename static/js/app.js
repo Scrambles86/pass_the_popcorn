@@ -5,6 +5,12 @@ function displayModal(modalId) {
   modal.style.display = 'block';
 }
 
+function closeEditModal(modalId) {
+  let editModal = document.getElementById(modalId)
+  editModal.style.display = 'none';
+}
+  
+
 $(document).ready(function () {
   $("#addfilm").hide();
   $("#editmodal").hide();

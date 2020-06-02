@@ -1,5 +1,7 @@
 <div id="film-{{review._id}}" class="modal editmodal">
-{% include 'components/closebutton.html' %}
+  <button type="button" class="close" aria-label="Close" onclick="closeEditModal('film-{{review._id}}')">
+    <span aria-hidden="true">&times;</span>
+  </button>
   <h4 class="edit-header">Edit your review below</h4>
   <form id="movie_post" action="{{ url_for('update_movie', movie_id=review._id)}}" method="POST">
       <div class="input-group">
