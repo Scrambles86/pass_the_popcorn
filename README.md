@@ -202,24 +202,35 @@ MongoDb stores the following types of data for this app :
 <li>PIP</li>
 <li>Python 3</li>
 <li>Flask</li>
-</ul>
-<p>You will also need an account with :</p>
-<ul>
-<li>MongoDB Atlas</li>
+<p>You will also need an account with <strong>MongoDB Atlas</strong><</p>
 </ul>
 
-<ul>
-<p>From the terminal, run the following commands</p>
+
+<p> 1 - From the terminal, run the following command :</p>
 
 ```
 git clone https://github.com/Scrambles86/pass_the_popcorn
 ```
 
-<li> 1 : $ git clone </li>
-<li>$ pip install --upgrade pip</li>
-<li>$ pip install -r requirements.txt</li>
-<li>$ python -m flask run</li>
-</ul>
+<p>2 - From your terminal, navigate to this folder.</p>
+<p>3 - In your terminal, run the following command : </p>
+```
+python3 -m .venv venv
+```
+<p>4 - Use the following command in order to initilise the environment : </p>
+```
+.venv\bin\activate 
+```
+<p>5 - Run the following command in order to install the libraries relevant to this app : </p>
+```
+pip3 -r requirements.txt
+```
+<p>6 - You should then make sure to open a <strong>.gitignore</strong> file, where you can set a <strong>SECRET_KEY</strong>, as well as link to your <strong>MONGO_URI</strong></p>
+
+<p>7 - Run the following command in your terminal in order to run the app : </p>
+```
+Python3 app.py
+```
 
 <h2>Heroku Deployment</h2>
 
